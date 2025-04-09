@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"><!-- Adaptación responsive -->
+  <meta name="description" content="Guía integral en español sobre los fundamentos de HTML y CSS, con buenas prácticas, ejemplos profesionales, ejercicios y recursos para ASIR, DAW, DAM.">
+  <title>Guía HTML & CSS - ASIR DAW DAM</title>
+  <!-- Integración de Bootstrap CSS (CDN) -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css">
+  <!-- Fuente Google Fonts (ejemplo Open Sans) -->
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+  <!-- Hoja de estilo principal -->
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <!-- HEADER: Encabezado con título y menú de navegación -->
+  <header class="site-header">
+    <div class="container">
+      <h1>Guía de HTML y CSS - FP Desarrollo</h1>
+      <!-- NAV: Menú de navegación interna -->
+      <nav class="navbar">
+        <ul class="nav-links">
+          <li><a href="#fundamentos-html">HTML</a></li>
+          <li><a href="#fundamentos-css">CSS</a></li>
+          <li><a href="#frameworks">Frameworks</a></li>
+          <li><a href="#ia-aprendizaje">IA y Aprendizaje</a></li>
+          <li><a href="#ejemplos">Ejemplos</a></li>
+          <li><a href="#ejercicios">Ejercicios</a></li>
+          <li><a href="#recursos">Recursos</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <!-- MAIN: Contenido principal de la guía -->
+  <main class="container main-content">
+    <!-- SECCIÓN: Fundamentos de HTML -->
+    <section id="fundamentos-html">
+      <h2>Fundamentos de HTML</h2>
+      <p>HTML (HyperText Markup Language) es el lenguaje de marcado con el que se estructura el contenido de la web. En esta sección cubrimos etiquetas básicas, estructura semántica, formularios y SEO básico en HTML.</p>
+      <h3>Estructura básica y etiquetas semánticas</h3>
+      <p>Un documento HTML5 comienza con <code>&lt;!DOCTYPE html&gt;</code> y se organiza con <code>&lt;html&gt;</code>, <code>&lt;head&gt;</code> y <code>&lt;body&gt;</code>. Dentro del <code>&lt;body&gt;</code> usamos etiquetas semánticas como <code>&lt;header&gt;</code>, <code>&lt;nav&gt;</code>, <code>&lt;main&gt;</code>, <code>&lt;section&gt;</code>, <code>&lt;article&gt;</code>, <code>&lt;aside&gt;</code> y <code>&lt;footer&gt;</code> para dar significado al contenido.</p>
+      <p>Por ejemplo, a continuación vemos una estructura básica semántica:</p>
+      <pre class="codigo"><code>&lt;header&gt;
+  &lt;h1&gt;Título&lt;/h1&gt;
+  &lt;nav&gt;...&lt;/nav&gt;
+&lt;/header&gt;
+&lt;main&gt;
+  &lt;section&gt;
+    &lt;h2&gt;Sección&lt;/h2&gt;
+    &lt;p&gt;Contenido...&lt;/p&gt;
+  &lt;/section&gt;
+  &lt;aside&gt;Contenido relacionado...&lt;/aside&gt;
+&lt;/main&gt;
+&lt;footer&gt;Pie de página&lt;/footer&gt;
+</code></pre>
+      <p>Esta estructura mejora la accesibilidad y el SEO, ya que los navegadores y motores de búsqueda entienden la jerarquía del contenido.</p>
+      <h3>Formularios y validación en HTML5</h3>
+      <p>HTML5 introdujo atributos de validación como <code>required</code>, <code>pattern</code>, <code>min</code>, <code>max</code>, etc., que permiten validar datos de formularios en el navegador sin usar JavaScript.</p>
+      <!-- Ejemplo de formulario con validación HTML5 -->
+      <form class="example-form" action="#" method="get">
+        <fieldset>
+          <legend>Contacto</legend>
+          <label for="nombre">Nombre:</label>
+          <input type="text" id="nombre" name="nombre" required placeholder="Tu nombre">
+          <label for="email">Email:</label>
+          <input type="email" id="email" name="email" required placeholder="tu@example.com">
+          <label for="mensaje">Mensaje:</label>
+          <textarea id="mensaje" name="mensaje" required minlength="10" placeholder="Escribe tu mensaje..."></textarea>
+          <button type="submit">Enviar</button>
+        </fieldset>
+      </form>
+      <p>En el formulario de ejemplo, todos los campos son obligatorios (atributo <code>required</code>) y el campo de email debe tener formato válido gracias a <code>type="email"</code>. Al intentar enviar sin llenar correctamente, el navegador mostrará errores de validación.</p>
+      <h3>SEO básico en HTML</h3>
+      <p>Para SEO, es importante definir un <code>&lt;title&gt;</code> adecuado, usar meta descripción (<code>&lt;meta name="description"&gt;</code>) y estructurar el contenido con encabezados jerárquicos (<code>&lt;h1&gt;...&lt;h2&gt;</code>, etc.). También usar texto alternativo en imágenes (<code>alt</code>) y enlaces con texto descriptivo.</p>
+      <p>Ejemplo de meta descripción en esta página (ver código fuente en el <code>&lt;head&gt;</code>):</p>
+      <pre class="codigo"><code>&lt;meta name="description" content="Guía integral en español sobre los fundamentos de HTML y CSS..."&gt;</code></pre>
+      <p>Con estas prácticas, los motores de búsqueda pueden entender mejor de qué trata la página y mostrarla pertinentemente en resultados.</p>
+    </section>
+
+    <!-- SECCIÓN: Fundamentos de CSS -->
+    <section id="fundamentos-css">
+      <h2>Fundamentos de CSS</h2>
+      <p>CSS (Cascading Style Sheets) es el lenguaje de estilos que se utiliza para describir la presentación visual de un documento HTML. Aquí veremos selectores, el modelo de caja, diseño responsivo con media queries, Flexbox, Grid y pseudo-clases/animaciones.</p>
+      <h3>Selectores en CSS</h3>
+      <p>Un selector CSS permite apuntar a elementos HTML específicos para aplicarles estilos. Ejemplos:</p>
+      <ul>
+        <li><code>elemento</code>: Selecciona todas las etiquetas de ese tipo (ej: <code>p</code> selecciona todos los párrafos).</li>
+        <li><code>.clase</code>: Selecciona todos los elementos con esa clase (ej: <code>.destacado</code>).</li>
+        <li><code>#id</code>: Selecciona el elemento con ese id (ej: <code>#menu</code>).</li>
+        <li><code>padre hijo</code>: Selección por jerarquía (ej: <code>main p</code> párrafos dentro de &lt;main&gt;).</li>
+        <li>Pseudo-clases: ej: <code>a:hover</code> (cuando el cursor está sobre un enlace).</li>
+      </ul>
+      <p>La especificidad y el orden determinan qué estilos prevalecen en caso de conflicto (última regla aplicada y/o selector más específico gana).</p>
+      <h3>Modelo de caja (Box Model)</h3>
+      <p>Todo elemento HTML se representa como una caja con contenido, padding (relleno), borde y margen. Por defecto, <code>width</code> y <code>height</code> aplican al contenido; el padding y border se suman aumentando el tamaño total. Podemos usar <code>box-sizing: border-box;</code> para incluir padding y border en el tamaño definido.</p>
+      <p>Ejemplo: si a un <code>&lt;div&gt;</code> le damos <code>width: 200px; padding: 10px; border: 2px solid;</code>, el ancho total será 200 + 2*10 + 2*2 = 224px.</p>
+      <p>Comprender el modelo de caja es crucial para ajustar correctamente los espacios y alineaciones en la página.</p>
+      <h3>Diseño responsivo con media queries</h3>
+      <p>Las <em>media queries</em> permiten aplicar estilos dependiendo de las características del dispositivo o ventana. Por ejemplo, podemos cambiar el layout si la pantalla es menor a cierta anchura:</p>
+      <pre class="codigo"><code>@media (max-width: 600px) {
+  /* estilos para móviles */
+  body {
+    font-size: 16px;
+  }
+}</code></pre>
+      <p>Así adaptamos la interfaz a móvil, tablet o desktop. En esta página, utilizamos media queries para que la barra de navegación y las secciones se ajusten en pantallas pequeñas (p. ej., el menú se verticaliza en móvil).</p>
+      <h3>Layouts con Flexbox y Grid</h3>
+      <p><strong>Flexbox</strong> nos facilita diseñar layouts en una dimensión (fila o columna). Por ejemplo, una barra de navegación horizontal o centrar un elemento verticalmente dentro de su contenedor. Simplemente aplicando <code>display: flex;</code> al contenedor y usando propiedades como <code>justify-content</code> (alineación horizontal) y <code>align-items</code> (alineación vertical) podemos lograr distribuciones comunes.</p>
+      <p><strong>Grid</strong> es aún más poderoso para diseños de dos dimensiones (filas y columnas). Definimos un contenedor con <code>display: grid;</code> y establecemos columnas y filas con <code>grid-template-columns</code> y <code>grid-template-rows</code>. Podemos colocar los ítems en posiciones específicas de la cuadrícula. Es muy útil para maquetados de páginas completos o galerías.</p>
+      <p>En esta guía usamos <em>Flexbox</em> para la sección de navegación (distribuyendo los enlaces) y <em>Grid</em> para los ejemplos profesionales (tres columnas en desktop, que pasan a una columna en móvil).</p>
+      <h3>Pseudo-clases y animaciones</h3>
+      <p>Las pseudo-clases como <code>:hover</code>, <code>:focus</code>, <code>:first-child</code>, etc., nos permiten aplicar estilos en estados particulares. Ejemplo: <code>a:hover { color: orange; }</code> cambia el color de un enlace al pasar el cursor.</p>
+      <p>Para animaciones, CSS ofrece <strong>transiciones</strong> y <strong>animaciones con keyframes</strong>. Una transición (<code>transition</code>) permite que un cambio de estilo (por ejemplo, de color o de tamaño) ocurra suavemente en un intervalo de tiempo. Las animaciones con <code>@keyframes</code> permiten definir cambios de estilo en porcentajes de tiempo y se pueden ejecutar en bucle o una vez.</p>
+      <p>En esta página se han aplicado transiciones simples. Por ejemplo, los botones tienen <code>transition: background-color 0.3s;</code> para que al hacer hover el cambio de color sea gradual. Esto mejora la experiencia de usuario con pequeñas pistas visuales interactivas.</p>
+    </section>
+
+    <!-- SECCIÓN: Frameworks CSS -->
+    <section id="frameworks">
+      <h2>Frameworks CSS: Bootstrap y Tailwind</h2>
+      <p>En el mundo laboral, a menudo se utilizan frameworks CSS para acelerar el desarrollo. **Bootstrap** proporciona un conjunto de componentes y una grid responsiva lista para usar, mientras que **Tailwind CSS** ofrece utilidades de bajo nivel para construir estilos personalizados rápidamente.</p>
+      <div class="row">
+        <!-- Ejemplo usando clases de Bootstrap -->
+        <div class="col-md-6">
+          <h3>Ejemplo Bootstrap</h3>
+          <p>Utilizando la grid de Bootstrap:</p>
+          <div class="container bg-light p-3">
+            <div class="row">
+              <div class="col-6">
+                <div class="p-2 bg-primary text-white">Col 1</div>
+              </div>
+              <div class="col-6">
+                <div class="p-2 bg-secondary text-white">Col 2</div>
+              </div>
+            </div>
+          </div>
+          <p class="mt-2"><small>*Arrastra la ventana para ver cómo se apilan en pantallas pequeñas.*</small></p>
+        </div>
+        <div class="col-md-6">
+          <h3>Ejemplo Tailwind</h3>
+          <p>Con Tailwind (hipotético, requiere su CSS):</p>
+          <pre class="codigo"><code>&lt;button class="px-4 py-2 bg-green-600 text-white rounded hover:bg-green-700"&gt;Enviar&lt;/button&gt;</code></pre>
+          <p>Esta clase utility-first define padding, color de fondo, texto y hover diferente en un botón sin escribir CSS manual.</p>
+        </div>
+      </div>
+      <p>Bootstrap se ha incluido en este proyecto (ver <code>&lt;head&gt;</code>) para demostrar su uso. Tailwind no se incluyó directamente, pero se muestran ejemplos de cómo sería su sintaxis.</p>
+    </section>
+
+    <!-- SECCIÓN: Integración de IA -->
+    <section id="ia-aprendizaje">
+      <h2>Integración de IA en el aprendizaje</h2>
+      <p>Las herramientas de Inteligencia Artificial pueden apoyar el aprendizaje de HTML y CSS. Por ejemplo, asistentes como ChatGPT pueden responder dudas ("¿Cómo centro un div?") o generar código de ejemplo a partir de indicaciones en lenguaje natural.</p>
+      <p>Existen <strong>generadores de código</strong> que, dada una descripción, producen código HTML/CSS. Estas herramientas permiten experimentar y obtener soluciones que luego el estudiante puede analizar. Es importante usarlas como complemento, comparando sus sugerencias con la documentación oficial y probando por uno mismo.</p>
+      <p>También hay asistentes integrados en editores de código (p.ej. GitHub Copilot) que sugieren código mientras escribes. Por ejemplo, al empezar a escribir <code>&lt;form&gt;</code> podrían autocompletar los campos comunes de un formulario.</p>
+      <p>Recomendación: usar la IA para reforzar el aprendizaje, no para evitarlo. Se puede pedir que explique por qué cierto CSS no funciona, o pedirle consejos de accesibilidad. Luego, verificar siempre en la práctica real lo obtenido. Las IAs son excelentes para obtener pistas rápidas, pero no siempre su output es perfecto o óptimo, por lo que el criterio del desarrollador sigue siendo clave.</p>
+      <p>Ejercicio propuesto: solicitar a ChatGPT que genere un pequeño código (por ej, una tarjeta de presentación con HTML y CSS), y luego tratar de entender cada línea de lo que generó, modificándolo para personalizarlo. Esto combina lo mejor de ambos mundos: la rapidez de la IA y la comprensión activa del estudiante.</p>
+    </section>
+
+    <!-- SECCIÓN: Ejemplos profesionales -->
+    <section id="ejemplos">
+      <h2>Ejemplos de uso profesional</h2>
+      <p>A continuación, ejemplos resumidos de cómo se aplican HTML/CSS en contextos típicos de los ciclos formativos:</p>
+      <div class="ejemplos"><!-- Usamos CSS Grid aquí -->
+        <div class="ejemplo">
+          <h3>ASIR</h3>
+          <p><em>Administración de Sistemas</em>: por ejemplo, crear la interfaz de una intranet de empresa o una página de monitorización de servidores. Un admin de sistemas puede usar HTML para estructurar datos (tablas de estado, formularios de configuración) y CSS para resaltar alertas (p.ej., servidores caídos en rojo). También podría personalizar la apariencia de un gestor de tickets interno usando estos conocimientos.</p>
+        </div>
+        <div class="ejemplo">
+          <h3>DAW</h3>
+          <p><em>Desarrollo Web</em>: diseño del frontend de un sitio o aplicación web. Un desarrollador DAW maquetará con HTML5 semántico un portal (cabecera, sección de noticias, sidebar de widgets, pie). Aplicará CSS (quizás con un framework) para lograr un estilo profesional y responsive. Por ejemplo, en un proyecto e-commerce, crear la página de catálogo de productos con grid CSS para las tarjetas de producto, y formularios de compra accesibles.</p>
+        </div>
+        <div class="ejemplo">
+          <h3>DAM</h3>
+          <p><em>Multiplataforma</em>: creación de interfaces híbridas. Por ejemplo, usando Electron para una app de escritorio, se diseña la ventana principal con HTML/CSS. O en desarrollo móvil híbrido, se construyen pantallas de la app con tecnologías web. El conocimiento de responsive design ayuda a que la misma base HTML/CSS se adapte a distintas resoluciones de dispositivos. Un caso práctico: una app móvil de agenda donde la vista de contactos es una lista `<ul>` estilizada con CSS para parecer elementos nativos.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECCIÓN: Ejercicios y retos -->
+    <section id="ejercicios">
+      <h2>Ejercicios prácticos y retos</h2>
+      <ol>
+        <li><strong>Estructura semántica:</strong> Maquetar con HTML5 una página básica (cabecera, contenido con secciones y aside, pie de página) para una noticia o tema de tu elección. Asegúrate de usar etiquetas semánticas adecuadas y validar el HTML.</li>
+        <li><strong>Formulario de contacto:</strong> Crear un formulario con campos Nombre, Email, Teléfono y Mensaje. Implementar validación HTML5 (required, type, pattern) y probar los mensajes de error nativos del navegador.</li>
+        <li><strong>Diseño responsive:</strong> Tomar la página del ejercicio 1 o 2 y añadir CSS para que sea responsive. Ej: en móvil, convertir un layout de dos columnas en uno de una columna. Utiliza media queries para lograrlo.</li>
+        <li><strong>Flexbox:</strong> Con CSS Flexbox, centrar un elemento en pantalla (horizontal y verticalmente) y crear una barra de navegación horizontal que distribuya equitativamente 5 enlaces. Luego hacer que en pantalla pequeña los enlaces se apilen verticalmente.</li>
+        <li><strong>Grid:</strong> Construir una galería de 6 imágenes usando CSS Grid en 3 columnas x 2 filas en desktop, que pase a 2 columnas x 3 filas en dispositivos más pequeños. Añadir algo de espacio (gap) entre las imágenes.</li>
+        <li><strong>Bootstrap:</strong> Rehacer el formulario del ejercicio 2 utilizando exclusivamente clases de Bootstrap para el diseño (usa su grid para organizar campos en filas/columnas y clases de formulario para inputs). Compara la velocidad de desarrollo con respecto a escribir CSS manual.</li>
+        <li><strong>Tailwind:</strong> Si te es posible, intenta estilizar un componente (por ejemplo, una tarjeta con título, imagen y texto) usando clases de utilidad de Tailwind en lugar de CSS convencional. Analiza la legibilidad del HTML resultante.</li>
+        <li><strong>ChatGPT al rescate:</strong> Pregúntale a una IA como ChatGPT cómo resolver un problema de CSS que te haya costado (por ejemplo, "¿cómo puedo hacer un div translúcido encima de una imagen de fondo?"). Aplica su solución y verifica si funciona; si no, depúrala tú mismo. Reflexiona sobre lo que hizo igual o diferente a lo que intentaste inicialmente.</li>
+      </ol>
+      <p>Estos ejercicios cubren teoría y práctica. Se recomienda realizarlos y luego compartir el código en un repositorio (por ejemplo, en GitHub) para obtener retroalimentación de compañeros o tutores.</p>
+    </section>
+
+    <!-- SECCIÓN: Recursos adicionales -->
+    <section id="recursos">
+      <h2>Recursos y referencias adicionales</h2>
+      <ul>
+        <li><a href="https://developer.mozilla.org/es/docs/Web/HTML" target="_blank">MDN Web Docs - HTML (en español)</a> – Documentación completa de HTML5, con tutoriales y referencias de todas las etiquetas.</li>
+        <li><a href="https://developer.mozilla.org/es/docs/Web/CSS" target="_blank">MDN Web Docs - CSS (en español)</a> – Guía y referencia de CSS, incluyendo secciones dedicadas a Flexbox, Grid, etc.</li>
+        <li><a href="https://lenguajehtml.com/" target="_blank">LenguajeHTML.com</a> – Tutoriales en español (por Manz) sobre HTML5, CSS3 y más, muy didácticos y actualizados.</li>
+        <li><a href="https://getbootstrap.com/docs/5.2/getting-started/introduction/" target="_blank">Documentación de Bootstrap 5 (oficial)</a> – Para aprender a usar el framework Bootstrap y ver ejemplos de código.</li>
+        <li><a href="https://tailwindcss.com/docs" target="_blank">Documentación de Tailwind CSS (oficial)</a> – Guía de utilidades CSS de Tailwind y playground en línea para probar clases rápidamente.</li>
+        <li><a href="https://www.freecodecamp.org/espanol/" target="_blank">freeCodeCamp</a> – Plataforma gratuita (disponible en español) con un currículo interactivo para aprender HTML, CSS y desarrollo web en general, mediante ejercicios prácticos.</li>
+        <li><a href="https://web.dev/learn/css/" target="_blank">web.dev - Aprender CSS</a> – Curso gratuito de Google (en inglés, con opción en español) sobre fundamentos de CSS, muy actualizado y con buenas prácticas de rendimiento y accesibilidad.</li>
+        <li><a href="https://www.w3schools.com/" target="_blank">W3Schools</a> – Referencia rápida de HTML, CSS, JavaScript, etc. (en inglés sencillo). Útil para consultar ejemplos rápidos de sintaxis.</li>
+        <li><a href="https://validator.w3.org/" target="_blank">W3C Markup Validator</a> – Herramienta para validar código HTML/XHTML. Ideal para comprobar que tu HTML no tiene errores de sintaxis.</li>
+        <li><a href="https://css-tricks.com/snippets/css/a-guide-to-flexbox/" target="_blank">CSS-Tricks: Guía de Flexbox</a> – (inglés) Un cheat-sheet visual para entender todas las propiedades de Flexbox.</li>
+        <li><a href="https://css-tricks.com/snippets/css/complete-guide-grid/" target="_blank">CSS-Tricks: Guía Completa de Grid</a> – (inglés) Similar al anterior pero para CSS Grid, con ilustraciones de cada concepto.</li>
+        <li><a href="https://wave.webaim.org/" target="_blank">Wave (WebAIM)</a> – Herramienta online para evaluar la accesibilidad de tu página web, muy útil tras terminar tu estructura HTML/CSS.</li>
+      </ul>
+      <p>Estos recursos ayudan a ampliar conocimientos. Se recomienda especialmente MDN en español para profundizar en cada tema visto en la guía, y freeCodeCamp para practicar construyendo proyectos completos. ¡Feliz aprendizaje web!</p>
+    </section>
+  </main>
+
+  <!-- FOOTER: Pie de página con información final -->
+  <footer class="site-footer">
+    <div class="container">
+      <p>Guía creada como material didáctico para FP (ASIR/DAW/DAM) - 2025.</p>
+      <p>Autor: [Nombre del autor] - Disponible en <a href="https://github.com/usuario/repositorio-guia-html-css" target="_blank">GitHub</a></p>
+    </div>
+  </footer>
+
+</body>
+</html>
+

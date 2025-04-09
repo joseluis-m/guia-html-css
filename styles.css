@@ -1,0 +1,209 @@
+/* Base: Establecer box-sizing global para incluir padding y border en medidas */
+* {
+  box-sizing: border-box;
+}
+
+/* Tipografías base */
+body {
+  font-family: 'Open Sans', sans-serif;
+  color: #333;              /* Texto gris oscuro legible */
+  margin: 0;
+  background-color: #f9f9f9; /* Fondo gris claro general */
+  line-height: 1.6;
+}
+h1, h2, h3, h4 {
+  font-weight: 600;
+}
+h1 { font-size: 2rem; margin: 0.5em 0; }
+h2 { font-size: 1.5rem; margin: 1em 0 0.5em; }
+h3 { font-size: 1.25rem; margin: 1em 0 0.5em; }
+p {
+  margin: 0.5em 0;
+}
+
+/* Enlaces */
+a {
+  color: #006fbf; /* azul */
+  text-decoration: none;
+}
+a:hover {
+  color: #004f8c; /* azul más oscuro al hover */
+  text-decoration: underline;
+}
+
+/* Layout principal */
+.container {
+  width: 90%;
+  max-width: 1200px;
+  margin: 0 auto; /* centrar */
+  padding: 0 1rem;
+}
+.main-content {
+  padding: 1rem 0;
+  background-color: #fff; /* fondo blanco para contraste con body */
+}
+
+/* HEADER styles */
+.site-header {
+  background-color: #004080; /* azul oscuro corporativo */
+  color: #fff;
+  padding: 1rem 0;
+}
+.site-header h1 {
+  font-size: 1.8rem;
+  margin: 0;
+}
+.navbar {
+  margin-top: 0.5rem;
+}
+.navbar .nav-links {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+.navbar .nav-links li {
+  /* Cada enlace se estiliza a continuación */
+}
+.navbar .nav-links a {
+  color: #fff;
+  padding: 0.3rem 0.5rem;
+  border-radius: 4px;
+  transition: background-color 0.3s;
+}
+.navbar .nav-links a:hover {
+  background-color: #0059b3; /* hover azul un poco más claro */
+}
+
+/* Section content styles */
+section {
+  margin-bottom: 2rem;
+}
+section h2 {
+  border-bottom: 2px solid #eee;
+  padding-bottom: 0.2em;
+  color: #004080; /* color acorde al tema, azul oscuro */
+}
+section h3 {
+  color: #0059b3;
+}
+section pre.codigo {
+  background: #f4f4f4;
+  padding: 0.5rem;
+  overflow-x: auto;
+  border-left: 3px solid #ddd;
+}
+section pre.codigo code {
+  font-family: monospace;
+  font-size: 0.9rem;
+}
+
+/* Formularios de ejemplo */
+.example-form {
+  background: #fefefe;
+  border: 1px solid #ddd;
+  padding: 1rem;
+  margin: 1rem 0;
+}
+.example-form fieldset {
+  border: 1px solid #ccc;
+  padding: 1rem;
+}
+.example-form legend {
+  font-weight: bold;
+  padding: 0 0.5rem;
+}
+.example-form label {
+  display: block;
+  margin-top: 0.5rem;
+}
+.example-form input, .example-form textarea {
+  width: 100%;
+  padding: 0.5rem;
+  margin: 0.2rem 0 0.8rem;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font: inherit;
+}
+.example-form button {
+  background: #006fbf;
+  color: #fff;
+  border: none;
+  padding: 0.6rem 1.2rem;
+  font-size: 1rem;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+.example-form button:hover {
+  background: #005fa3;
+}
+
+/* Ejemplo frameworks (Bootstrap override demostration, if needed) */
+section#frameworks h3 {
+  font-size: 1.2rem;
+  margin-top: 1rem;
+}
+
+/* Custom code blocks styling (if not using highlight) */
+.codigo {
+  color: #2a2a2a;
+}
+
+/* Ejemplos profesionales (Grid layout) */
+.ejemplos {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 1rem;
+}
+.ejemplo {
+  background: #f0f8ff; /* azul muy claro */
+  border: 1px solid #cce;
+  padding: 1rem;
+  border-radius: 4px;
+}
+.ejemplo h3 {
+  margin-top: 0;
+  color: #004080;
+}
+.ejemplo p {
+  font-size: 0.95rem;
+}
+
+/* Footer */
+.site-footer {
+  background: #003366;
+  color: #ccc;
+  padding: 1rem 0;
+  text-align: center;
+}
+.site-footer a {
+  color: #fff;
+  text-decoration: underline;
+}
+.site-footer p {
+  margin: 0.2rem;
+  font-size: 0.9rem;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .navbar .nav-links {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .ejemplos {
+    grid-template-columns: 1fr 1fr; /* 2 columnas en tablets/medianos */
+  }
+}
+@media (max-width: 500px) {
+  .ejemplos {
+    grid-template-columns: 1fr; /* 1 columna en móviles */
+  }
+  .navbar .nav-links {
+    gap: 0.5rem;
+  }
+}
+
