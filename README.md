@@ -4,6 +4,8 @@ Esta guía es una **página web** que resume los fundamentos de HTML y CSS, orie
 
 El objetivo es proporcionar una referencia accesible y completa para estudiantes, con contenidos teóricos, buenas prácticas y ejemplos prácticos. La página está construida con una estructura semántica clara, un diseño moderno y limpio, y se puede navegar mediante enlaces internos. Cada sección incluye explicaciones detalladas y el código HTML está comentado para facilitar la comprensión. Finalmente, se aportan ejercicios, retos y recursos adicionales para profundizar en el aprendizaje.
 
+---
+
 ## Estructura y accesibilidad de la página
 
 Una página web bien estructurada en HTML utiliza **etiquetas semánticas** para darle significado al contenido. Esto mejora la accesibilidad y la usabilidad, pues tanto los navegadores como las tecnologías de asistencia (lectores de pantalla) pueden interpretar mejor la página. Por ejemplo, en lugar de usar contenedores genéricos `<div>` para todo, conviene emplear etiquetas como `<header>`, `<nav>`, `<main>`, `<section>`, `<article>`, `<aside>` y `<footer>` para delimitar las distintas partes de la página. Estas etiquetas describen el tipo de contenido que envuelven, dando contexto a usuarios y motores de búsqueda. Un lector de pantalla, por ejemplo, puede saltar directamente al `<nav>` para navegar por el sitio o ignorar un `<aside>` si se indica contenido complementario, mejorando la **experiencia de accesibilidad** para usuarios con discapacidad visual.
@@ -13,6 +15,8 @@ En esta guía, la estructura HTML general sigue estas buenas prácticas semánti
 En cuanto a **accesibilidad**, aparte de las etiquetas semánticas, se han seguido otras recomendaciones: por ejemplo, todas las imágenes incluyen atributos `alt` descriptivos; los formularios (que veremos más adelante) utilizan etiquetas `<label>` asociadas a sus campos para facilitar su uso con lectores de pantalla; y se cuida el contraste de colores y la legibilidad de las tipografías. También se establece el atributo `lang="es"` en el `<html>` para indicar que el contenido está en español, ayudando tanto a buscadores como a tecnologías de apoyo a procesar correctamente el idioma.
 
 Por último, la estructura bien definida no solo ayuda a accesibilidad, **SEO** y navegación, sino también al mantenimiento del código. Un HTML semántico y limpio es más fácil de entender y actualizar por otros desarrolladores en proyectos colaborativos. En resumen, esta página ejemplifica una organización lógica del contenido y aplica estándares web modernos para ser clara, accesible y fácil de ampliar.
+
+---
 
 ## Fundamentos de HTML
 
@@ -28,6 +32,8 @@ A medida que creamos la estructura del contenido, es importante usar **HTML sem�
 
 Este enfoque semántico mejora la comprensión del documento por parte de los buscadores y ayuda al **SEO**: los motores de búsqueda utilizan estas etiquetas para entender mejor la estructura y contenido, lo que influye en la clasificación en resultados. Además, contribuye a la **accesibilidad**, facilitando la navegación por secciones usando ayudas técnicas. En el código de la página de esta guía, cada sección está marcada con sus etiquetas correspondientes y comentarios que indican su propósito (por ejemplo, `<!-- SECCIÓN: Fundamentos de HTML -->` antes del bloque de contenido de HTML).
 
+---
+
 ## Formularios y validación en HTML5
 
 Los **formularios** son una parte fundamental de muchas páginas web, ya que permiten la entrada de datos del usuario. En HTML, un formulario se define con `<form>` y suele incluir controles como campos de texto (`<input type="text">`), campos de correo (`<input type="email">`), contraseñas (`<input type="password">`), casillas de verificación (`<input type="checkbox">`), botones de opción (`<input type="radio">`), selectores desplegables (`<select>` y `<option>`), áreas de texto multilinea (`<textarea>`), entre otros. Cada control debe llevar un atributo `name` para identificar el dato que envía y es buena práctica asociar un `<label for="idCampo">` a cada control (mediante el atributo `id` en el control) para que el formulario sea accesible: al hacer click en la etiqueta, el campo correspondiente recibe el foco.
@@ -37,6 +43,8 @@ HTML5 introdujo una serie de **atributos de validación** incorporados que permi
 Un ejemplo sencillo incluido en esta página es un pequeño formulario de contacto donde se utiliza `required` para campos obligatorios y `type="email"` para validar automáticamente que el correo tenga un formato válido. Gracias a HTML5, al intentar enviar el formulario, el navegador verificará estos requisitos y avisará al usuario si olvidó llenar algo o si el formato es incorrecto, mostrando mensajes como "Este campo es obligatorio" o "Introduzca una dirección de correo electrónico válida". **Es importante destacar** que la validación del lado del cliente (con HTML5 o incluso con JavaScript) no sustituye la validación del lado del servidor; siempre se debe verificar en el servidor los datos recibidos, por seguridad. Aun así, estas validaciones en HTML mejoran la experiencia de usuario al dar una retroalimentación inmediata.
 
 En el código, hemos comentado cada parte del formulario para explicar su rol (por ejemplo, `<!-- Campo de email con validación HTML5 -->`). También se ilustra el uso del atributo `placeholder` para mostrar texto de ayuda dentro de los campos antes de que el usuario escriba, y cómo agrupar controles relacionados con `<fieldset>` y `<legend>` (por ejemplo, para un grupo de botones de opción).
+
+---
 
 ## SEO básico en HTML
 
@@ -58,6 +66,8 @@ Aunque el posicionamiento en buscadores (SEO) es un tema extenso que involucra m
 
 En resumen, siguiendo estas prácticas HTML básicas (estructura semántica, títulos y metadatos adecuados, alt en imágenes, etc.), sentamos una buena base para que la página sea indexada correctamente por los motores de búsqueda y sea accesible para los usuarios. Los contenidos de esta guía están organizados pensando en ello, de modo que resulten claros tanto para usuarios como para buscadores.
 
+---
+
 ## Fundamentos de CSS
 
 A continuación, se abordan los temas fundamentales de CSS necesarios para dar estilo y diseño a las páginas HTML: cómo seleccionar elementos para aplicar estilos, en qué consiste el modelo de caja y cómo manejar espacios/márgenes, cómo lograr un diseño adaptable a distintos dispositivos con media queries, y sistemas de diseño modernos con Flexbox y Grid, además de pseudo-clases y animaciones para interactividad.
@@ -66,47 +76,37 @@ A continuación, se abordan los temas fundamentales de CSS necesarios para dar e
 
 Los **selectores** nos permiten indicar a qué elementos HTML se aplican ciertas reglas CSS. CSS ofrece multitud de tipos de selectores, pero los más usados incluyen:
 
-- **Selector de elemento** (o etiqueta): se refiere a todas las etiquetas de un tipo dado.  
-  Ejemplo: `p { ... }` aplicará a todos los párrafos `<p>` de la página; `header { ... }` al elemento `<header>`, etc.
+- **Selector de elemento** (o etiqueta): se refiere a todas las etiquetas de un tipo dado. Ejemplo: `p { ... }` aplicará a todos los párrafos `<p>` de la página; `header { ... }` al elemento `<header>`, etc.
 
-- **Selector de clase**: se define en HTML con el atributo `class`. En CSS se denota con un punto `.` seguido del nombre de la clase.  
-  Ejemplo: `.destacado { color: red; }` afecta a cualquier elemento con `class="destacado"`.  
-  Es útil para aplicar estilos a grupos específicos de elementos, independientemente de su tipo.
+- **Selector de clase**: se define en HTML con el atributo `class`. En CSS se denota con un punto `.` seguido del nombre de la clase. Ejemplo: `.destacado { color: red; }` afecta a cualquier elemento con `class="destacado"`. Es útil para aplicar estilos a grupos específicos de elementos, independientemente de su tipo.
 
 - **Selector de ID**: usa el atributo `id` de un elemento, y en CSS se denota con `#`.  
   Por ejemplo, `#menu { ... }` estilizará el elemento con `id="menu"`.  
   Los IDs deben ser únicos en la página, por lo que este selector apunta como máximo a un elemento. Su uso se reserva para casos necesarios (a veces para JavaScript), pero en CSS moderno se prefieren más las clases que los IDs por flexibilidad.
 
-- **Selectores de descendiente/combinadores**: permiten seleccionar elementos en función de su posición en el árbol DOM.  
-  Por ejemplo, `main p { ... }` estiliza solo los `<p>` que estén dentro de `<main>`.  
-  Otro ejemplo, `section#intro em { ... }` aplicaría a `<em>` dentro de `<section id="intro">`.  
-  Existen combinadores de hijo directo (`>`), de hermano adyacente (`+`), de hermano general (`~`), etc., para casos más precisos.
+- **Selectores de descendiente/combinadores**: permiten seleccionar elementos en función de su posición en el árbol DOM. Por ejemplo, `main p { ... }` estiliza solo los `<p>` que estén dentro de `<main>`. Otro ejemplo, `section#intro em { ... }` aplicaría a `<em>` dentro de `<section id="intro">`. Existen combinadores de hijo directo (`>`), de hermano adyacente (`+`), de hermano general (`~`), etc., para casos más precisos.
 
-- **Selectores de atributo**: seleccionan elementos según la presencia o valor de un atributo.  
-  Por ejemplo, `input[type="email"] { ... }` podría dar estilo a campos de entrada de email, o  
-  `a[target="_blank"] { ... }` a enlaces que abren en nueva pestaña.
+- **Selectores de atributo**: seleccionan elementos según la presencia o valor de un atributo. Por ejemplo, `input[type="email"] { ... }` podría dar estilo a campos de entrada de email, o `a[target="_blank"] { ... }` a enlaces que abren en nueva pestaña.
 
-- **Selectores universales**: el asterisco `*` selecciona *todos* los elementos.  
-  Se usa con cuidado, típicamente en reseteos o para heredar estilos globales (`* { box-sizing: border-box; }` es un ejemplo común para aplicar el modelo de caja alternativo a todo elemento, de lo cual hablaremos en el modelo de caja).
+- **Selectores universales**: el asterisco `*` selecciona *todos* los elementos. Se usa con cuidado, típicamente en reseteos o para heredar estilos globales (`* { box-sizing: border-box; }` es un ejemplo común para aplicar el modelo de caja alternativo a todo elemento, de lo cual hablaremos en el modelo de caja).
 
 - **Selectores de pseudo-clase**: se tratan en detalle más abajo, pero mencionar aquí que notaciones como `a:hover` o `input:focus` también actúan como selectores que eligen elementos en cierto estado.
 
----
+Al escribir CSS, hay que considerar la **especificidad** de los selectores: por ejemplo, un selector de ID tiene más peso que uno de clase, y este a su vez más que uno de elemento. Si dos reglas entran en conflicto, la de mayor especificidad (o la última definida si la especificidad es igual) prevalecerá. Para mantener el código manejable, es recomendable no abusar de selectores demasiado complejos; a menudo una combinación de clases bien pensadas es suficiente para seleccionar lo que queremos estilizar.
 
-Al escribir CSS, hay que considerar la **especificidad** de los selectores: por ejemplo, un selector de ID tiene más peso que uno de clase, y este a su vez más que uno de elemento. Si dos reglas conflitan, la de mayor especificidad (o la última definida, si igual especificidad) prevalecerá. Para mantener el código manejable, es recomendable no abusar de selectores demasiado complejos; a menudo una combinación de clases bien pensadas es suficiente para seleccionar lo que queremos estilizar.
-
-En la hoja de estilo de esta guía, verás ejemplos de todos estos tipos de selectores.  
-Por ejemplo, usamos selectores de elemento para estilo general de tipografía (`body`, `h1`, `h2`, etc.), selectores de clase para componentes específicos (como `.codigo` para formatear bloques de código de ejemplo), y selectores anidados (combinadores) para casos como `.navbar a` (enlaces dentro de la barra de navegación).  
+En la hoja de estilo de esta guía, verás ejemplos de todos estos tipos de selectores. Por ejemplo, usamos selectores de elemento para estilo general de tipografía (`body`, `h1`, `h2`, etc.), selectores de clase para componentes específicos (como `.codigo` para formatear bloques de código de ejemplo), y selectores anidados (combinadores) para casos como `.navbar a` (enlaces dentro de la barra de navegación).  
 Los comentarios en el CSS explican la intención de cada bloque de estilos.
+
+---
 
 ## El modelo de caja (CSS Box Model)
 
-*Diagrama del modelo de caja* CSS. En CSS, cada elemento HTML se representa como una **caja rectangular** compuesta por varias áreas: el contenido, el relleno (*padding*), el borde (*border*) y el margen (*margin*). En otras palabras, todo lo que vemos en la página está dentro de cajas, y comprender cómo funcionan es clave para controlar el diseño.
+![Diagrama del modelo de caja en CSS](https://media.gcflearnfree.org/content/5ef2084faaf0ac46dc9c10be_06_23_2020/box_model.png "CSS Box Model")
 
-**Cada caja tiene un área de contenido** (que contiene el texto, imagen u otros elementos hijos) y opcionalmente áreas de relleno alrededor del contenido, un borde alrededor del relleno, y un margen externo fuera del borde. El tamaño de cada área se puede ajustar mediante propiedades CSS:  
-- `width` / `height`: afectan el área de contenido  
-- `padding`: el espacio entre contenido y borde  
-- `border-width`: (y estilo/color de borde) para el borde  
+En CSS, cada elemento HTML se representa como una **caja rectangular** compuesta por varias áreas: el contenido, el relleno (*padding*), el borde (*border*) y el margen (*margin*). En otras palabras, todo lo que vemos en la página está dentro de cajas, y comprender cómo funcionan es clave para controlar el diseño. **Cada caja tiene un área de contenido** (que contiene el texto, imagen u otros elementos hijos) y opcionalmente áreas de relleno alrededor del contenido, un borde alrededor del relleno, y un margen externo fuera del borde. El tamaño de cada área se puede ajustar mediante propiedades CSS:
+- `width`/`height`: afectan el área de contenido
+- `padding`: el espacio entre contenido y borde
+- `border-width`: (y estilo/color de borde) para el borde
 - `margin`: para el espacio externo
 
 En el diagrama (y en las herramientas de desarrollo de los navegadores, que suelen mostrar este modelo visualmente), podemos identificar:  
@@ -115,63 +115,42 @@ En el diagrama (y en las herramientas de desarrollo de los navegadores, que suel
 - **El border** alrededor del padding, con grosor y color definidos  
 - **El margin** fuera del borde, que es espacio en blanco que separa esta caja de otras cajas vecinas
 
----
+### ¿Por qué es importante esto?
 
-**¿Por qué es importante esto?** Porque cuando definimos, por ejemplo, `width: 200px` para un elemento, por defecto eso **no** incluye el padding ni el border.  
-Si además le damos `padding: 20px` y un `border: 2px solid`, el espacio total que ocupará la caja horizontalmente será:  
-`200 + 20 + 20 + 2 + 2 = 244px`.  
+Porque cuando definimos, por ejemplo, `width: 200px` para un elemento, por defecto eso **no** incluye el padding ni el border.  
+Si además le damos `padding: 20px` y un `border: 2px solid`, el espacio total que ocupará la caja horizontalmente será: `200 + 20 + 20 + 2 + 2 = 244px`. A veces esto sorprende a principiantes. Si quisiéramos que esos 200px incluyeran todo (contenido + padding + border), podríamos usar la propiedad `box-sizing: border-box;` en ese elemento (o globalmente para todos, ya que muchos frameworks lo hacen por defecto). Con `box-sizing: border-box`, el cálculo del ancho total cambia para que `width` **sí** incluya el padding y el border, facilitando definir tamaños fijos sin sorpresas.
 
-A veces esto sorprende a principiantes. Si quisiéramos que esos 200px incluyeran todo (contenido + padding + border), podríamos usar la propiedad `box-sizing: border-box;` en ese elemento (o globalmente para todos, ya que muchos frameworks lo hacen por defecto).  
-Con `box-sizing: border-box`, el cálculo del ancho total cambia para que `width` **sí** incluya el padding y el border, facilitando definir tamaños fijos sin sorpresas.
+Además, el **margin** tiene la particularidad de colapsar verticalmente en algunos casos (por ejemplo, dos `<p>` seguidos cada uno con margin-top/margin-bottom pueden compartir parte del margen en vez de sumarlos, según las reglas de colapso de márgenes). Esto hay que tenerlo en cuenta al espaciar elementos.
 
-Además, el **margin** tiene la particularidad de colapsar verticalmente en algunos casos  
-(por ejemplo, dos `<p>` seguidos cada uno con margin-top/margin-bottom pueden compartir parte del margen en vez de sumarlos, según las reglas de colapso de márgenes).  
-Esto hay que tenerlo en cuenta al espaciar elementos.
+En la hoja CSS de esta guía, hemos definido algunos estilos relacionados con el modelo de caja: un reset para establecer `box-sizing: border-box` globalmente (así manejar anchos es más intuitivo), márgenes por defecto para títulos y párrafos, y padding interno en ciertos contenedores para separar el contenido de sus bordes. Cada sección del contenido quizás tenga un `padding: 2rem` alrededor, por ejemplo, para que el texto no pegue con el borde de la ventana. Los comentarios en el CSS señalan estas decisiones.
+
+En resumen, dominar el modelo de caja permite controlar correctamente **espaciados y tamaños** en CSS. Es un concepto fundamental: **contenido + padding + border + margin = espacio total ocupado por el elemento**. Si esto se entiende bien, resolver problemas de diseño como "¿por qué mi elemento se desborda?" o "¿cómo centro esta caja?" se vuelve más sencillo.
 
 ---
-
-En la hoja CSS de esta guía, hemos definido algunos estilos relacionados con el modelo de caja:  
-un reset para establecer `box-sizing: border-box` globalmente (así manejar anchos es más intuitivo), márgenes por defecto para títulos y párrafos,  
-y padding interno en ciertos contenedores para separar el contenido de sus bordes.  
-Cada sección del contenido quizás tenga un `padding: 2rem` alrededor, por ejemplo, para que el texto no pegue con el borde de la ventana.  
-Los comentarios en el CSS señalan estas decisiones.
-
----
-
-En resumen, dominar el modelo de caja permite controlar correctamente **espaciados y tamaños** en CSS.  
-Es un concepto fundamental:  
-**contenido + padding + border + margin = espacio total ocupado por el elemento**.  
-Si esto se entiende bien, resolver problemas de diseño como  
-"¿por qué mi elemento se desborda?" o "¿cómo centro esta caja?"  
-se vuelve más sencillo.
 
 ## Diseño responsivo con *media queries*
 
-Hoy en día es indispensable que un sitio web se vea bien y sea usable tanto en pantallas grandes de ordenador como en tablets o móviles. El **diseño responsivo** (responsivo, *responsive design*) es la técnica que permite adaptar el diseño a diferentes tamaños de pantalla. En CSS, la herramienta principal para lograrlo son las **media queries** (consultas de medios).
+Hoy en día es indispensable que un sitio web se vea bien y sea usable tanto en pantallas grandes de ordenador como en tablets o móviles. El **diseño responsive** (responsivo, *responsive design*) es la técnica que permite adaptar el diseño a diferentes tamaños de pantalla. En CSS, la herramienta principal para lograrlo son las **media queries** (consultas de medios).
 
 Una media query permite aplicar un conjunto de estilos solo si se cumple una condición, típicamente relacionada con las características del dispositivo o ventana. El caso más común es usar la anchura de la pantalla (*viewport*) como criterio. Por ejemplo, podríamos escribir en el CSS:
 
+```css
 @media (max-width: 600px) {
-  /* Estilos CSS que solo se aplican cuando el ancho de pantalla es 600px o menos (móvil) */
+  /* Estilos CSS para móviles: se aplican cuando el ancho es 600px o menos */
   nav ul {
-    flex-direction: column;  /* Convierte un menú horizontal en vertical */
+    flex-direction: column;
   }
   body {
     font-size: 16px;
   }
 }
+```
 
-En esta guía, se ha adoptado una filosofía **mobile-first**: se definen primero los estilos para pantallas pequeñas (móviles), y luego mediante media queries se ajusta o mejora el diseño para pantallas más grandes.
+En esta guía, se ha adoptado una filosofía **mobile-first**: se definen primero los estilos para pantallas pequeñas (móviles), y luego mediante media queries se ajusta o mejora el diseño para pantallas más grandes. Por ejemplo, el menú de navegación en el header quizás en móvil se muestre como un menú desplegable vertical (o un ícono de "menú" hamburguesa, si se implementara JavaScript), mientras que en escritorio ese mismo menú se muestra horizontalmente. De hecho, en nuestro CSS tenemos algo inverso al ejemplo anterior: el `nav ul` está en columna por defecto (pensando en móvil), y mediante `@media (min-width: 601px)` lo ponemos en fila (`flex-direction: row`) para pantallas más amplias.
 
-Por ejemplo, el menú de navegación en el header quizás en móvil se muestre como un menú desplegable vertical (o un ícono de "menú" hamburguesa, si se implementara JavaScript), mientras que en escritorio ese mismo menú se muestra horizontalmente. De hecho, en nuestro CSS tenemos algo inverso al ejemplo anterior: el `<nav> ul` está en columna por defecto (pensando en móvil), y mediante `@media (min-width: 601px)` lo ponemos en fila (`flex-direction: row`) para pantallas más amplias.
+Otros usos comunes de media queries incluyen ajustar tamaños de fuente, cambiar layouts de múltiples columnas a una sola columna, ocultar elementos menos importantes en pantallas pequeñas, o cambiar imágenes por versiones más pequeñas. Por ejemplo, podríamos tener `.sidebar { display: block; }` en escritorio y `.sidebar { display: none; }` en móvil si una barra lateral no es crítica en pantallas pequeñas.
 
-Otros usos comunes de media queries incluyen ajustar tamaños de fuente, cambiar layouts de múltiples columnas a una sola columna, ocultar elementos menos importantes en pantallas pequeñas, o cambiar imágenes por versiones más pequeñas.  
-Por ejemplo, podríamos tener `.sidebar { display: block; }` en escritorio y `.sidebar { display: none; }` en móvil si una barra lateral no es crítica en pantallas pequeñas.
-
----
-
-Es importante elegir algunos **puntos de corte (breakpoints)** adecuados, basados en el contenido y no solo en dispositivos específicos.  
-Un diseño típico puede tener breakpoints alrededor de:
+Es importante elegir algunos **puntos de corte (breakpoints)** adecuados, basados en el contenido y no solo en dispositivos específicos. Un diseño típico puede tener breakpoints alrededor de:
 
 - **600px** (teléfonos en modo vertical)  
 - **768px** (tablet vertical o teléfonos grandes)  
@@ -180,96 +159,57 @@ Un diseño típico puede tener breakpoints alrededor de:
 
 En esta página, dado que principalmente es texto, con un diseño de una columna, no fueron necesarias muchas variaciones; pero se incluyó al menos una para demostrar la técnica.
 
----
-
 ### ¿Por qué preocuparnos por esto?
 
-Además de la obvia mejora de experiencia de usuario, hoy día Google penaliza sitios que no sean móviles (*mobile-friendly*).  
-De hecho, según un estudio citado por GoodFirms,  
-**un diseño no adaptativo es la razón principal por la que un usuario abandona un sitio web** en dispositivos móviles.  
-La capacidad de CSS para crear diseños fluidos o adaptativos sin crear sitios separados para móvil/escritorio es una gran ventaja.
+Además de la obvia mejora de experiencia de usuario, hoy día Google penaliza sitios que no sean móviles (*mobile-friendly*). De hecho, según un estudio citado por GoodFirms,  
+**un diseño no adaptativo es la razón principal por la que un usuario abandona un sitio web** en dispositivos móviles. La capacidad de CSS para crear diseños fluidos o adaptativos sin crear sitios separados para móvil/escritorio es una gran ventaja.
 
-En la práctica, para un diseño responsive efectivo también utilizamos unidades relativas como porcentajes o `em` / `rem` en vez de siempre píxeles, y herramientas como **Flexbox** y **Grid** (que veremos a continuación) que facilitan diseños flexibles.
+En la práctica, para un diseño responsive efectivo también utilizamos unidades relativas como porcentajes o `em`/`rem` en vez de siempre píxeles, y herramientas como **Flexbox** y **Grid** (que veremos a continuación) que facilitan diseños flexibles. Esta guía usa medidas responsivas (por ejemplo, anchos máximos en porcentaje para imágenes, o la tipografía base en `em`) de manera que se pueda escalar fácilmente.
 
-Esta guía usa medidas responsivas (por ejemplo, anchos máximos en porcentaje para imágenes, o la tipografía base en `em`) de manera que se pueda escalar fácilmente.
-
-En el código CSS proporcionado, se pueden ver las **media queries** aplicadas (busca `@media` en el archivo CSS).  
-Los comentarios explican qué cambio se hace en cada breakpoint.  
-Por ejemplo: a cierto ancho, aumentar padding lateral del contenido para verse mejor en pantallas grandes, o reubicar la navegación.
+En el código CSS proporcionado, se pueden ver las **media queries** aplicadas (busca `@media` en el archivo CSS). Los comentarios explican qué cambio se hace en cada breakpoint. Por ejemplo: a cierto ancho, aumentar padding lateral del contenido para verse mejor en pantallas grandes, o reubicar la navegación.
 
 ## Layouts con Flexbox y Grid
 
 CSS ha evolucionado y hoy contamos con **módulos de diseño avanzados** que facilitan la creación de layouts complejos sin recurrir a trucos como elementos flotantes.  
 Los más importantes son **Flexbox** y **CSS Grid**:
 
-### 🔹 Flexbox (Flexible Box Layout)
+### Flexbox (Flexible Box Layout)
 
 Es un sistema de distribución en una dimensión (una fila horizontal o una columna vertical) muy útil para alinear y distribuir elementos en un contenedor.  
-Flexbox está diseñado para manejar el layout **en una sola dirección** a la vez (horizontalmente o verticalmente).
-
-Un contenedor flex (`display: flex`) permite que sus elementos internos (flex items) se expandan o contraigan para llenar espacio disponible y para alinearlos fácilmente al inicio, final, centro, etc., tanto en eje principal como en eje perpendicular.
-
-Con Flexbox es sencillo, por ejemplo, centrar un elemento tanto horizontal como verticalmente (algo que con técnicas antiguas era engorroso).  
-También permite reordenar elementos, distribuir espacio sobrante equitativamente o según proporciones (usando la propiedad `flex` en los items),  
-y crear diseños responsivos simples (por ejemplo, una barra de navegación donde algunos elementos ocupan más espacio que otros automáticamente).
-
----
+Flexbox está diseñado para manejar el layout **en una sola dirección** a la vez (horizontalmente o verticalmente). Un contenedor flex (`display: flex`) permite que sus elementos internos (flex items) se expandan o contraigan para llenar espacio disponible y para alinearlos fácilmente al inicio, final, centro, etc., tanto en eje principal como en eje perpendicular. Con Flexbox es sencillo (por ejemplo) centrar un elemento tanto horizontal como verticalmente (algo que con técnicas antiguas era engorroso). También permite reordenar elementos, distribuir espacio sobrante equitativamente o según proporciones (usando la propiedad `flex` en los items), y crear diseños responsivos simples (por ejemplo, una barra de navegación donde algunos elementos ocupan más espacio que otros automáticamente).
 
 **Ejemplos de uso de Flexbox en la guía**:  
-- La barra de navegación del header está construida con `display: flex` para alinear los enlaces en fila y separarlos con espacio entre ellos  
-- En la sección de ejercicios, podríamos usar flexbox para colocar tarjetas de reto una al lado de la otra en filas
+- La barra de navegación del header está construida con `display: flex` para alinear los enlaces en fila y separarlos con espacio entre ellos.
+- En la sección de ejercicios, podríamos usar flexbox para colocar tarjetas de reto una al lado de la otra en filas.
 
-**Propiedades claves de Flexbox**:
-- `justify-content`: alineación horizontal de los items (al inicio, centro, fin, espacio equidistante, etc.)
-- `align-items`: alineación vertical de los items dentro del contenedor flex
-- `flex-direction`: fila o columna
-- `flex-wrap`: si los elementos exceden el espacio, permitir que salten a otra línea
-- En los hijos: `flex-grow`, `flex-shrink`, `flex-basis` (o la abreviatura `flex`)
+**Propiedades clave de Flexbox**:
+- `justify-content`: alineación horizontal de los items (al inicio, centro, fin, espacio equidistante, etc.).
+- `align-items`: alineación vertical de los items dentro del contenedor flex.
+- `flex-direction`: fila o columna.
+- `flex-wrap`: si los elementos exceden el espacio, permitir que salten a otra línea.
+- En los hijos: `flex-grow`, `flex-shrink`, `flex-basis` (o la abreviatura `flex`) para controlar cómo se dimensionan y ajustan.
 
-> En resumen, Flexbox es ideal para **diseños unidireccionales** y componentes, como barras de menú, galerías simples, tarjetas, pie de página distribuido, etc.
+En resumen, Flexbox es ideal para **diseños unidireccionales** y componentes, como barras de menú, galerías simples, tarjetas, pie de página distribuido, etc.
 
-### 🔹 Grid Layout
+### Grid Layout
 
-Es el módulo CSS diseñado para **diseño en dos dimensiones**, es decir, manejar filas y columnas a la vez.  
-Con **CSS Grid** podemos definir una rejilla (*grid*) en un contenedor, especificando cuántas columnas y filas tiene, con qué tamaños (fijos en px, flexibles en %, o usando fracciones `fr`), y luego colocar los elementos hijos en esa rejilla según posiciones.
+Es el módulo CSS diseñado para **diseño en dos dimensiones**, es decir, manejar filas y columnas a la vez. Con **CSS Grid** podemos definir una rejilla (*grid*) en un contenedor, especificando cuántas columnas y filas tiene, con qué tamaños (fijos en px, flexibles en %, o usando fracciones `fr`), y luego colocar los elementos hijos en esa rejilla según posiciones. Grid permite hacer layouts muy potentes. Por ejemplo, un esquema completo de una página: definir una cuadrícula de 3 columnas y 4 filas, donde la cabecera ocupa el ancho completo en la primera fila, el contenido principal ocupa un bloque central de las filas siguientes, una barra lateral ocupa las dos filas del lado derecho, etc. Todo esto con solo CSS, sin alterar el orden en HTML necesariamente.
 
-Grid permite hacer layouts muy potentes. Por ejemplo, un esquema completo de una página:  
-definir una cuadrícula de 3 columnas y 4 filas, donde la cabecera ocupa el ancho completo en la primera fila,  
-el contenido principal ocupa un bloque central de las filas siguientes, una barra lateral ocupa las dos filas del lado derecho, etc.  
-Todo esto con solo CSS, sin alterar el orden en HTML necesariamente.
+Un contenedor se hace grid con `display: grid`. Podemos definir columnas con `grid-template-columns` y filas con `grid-template-rows`.
 
----
+Por ejemplo: `grid-template-columns: 1fr 2fr 1fr;` define 3 columnas donde la del medio es el doble de ancha que las laterales. Podemos colocar hijos usando propiedades como: `grid-column: 1 / 3;`. Esto haría que ese elemento abarque desde la columna 1 hasta antes de la 3 (o sea, que cubra columnas 1 y 2). Grid también soporta nombrar áreas y ubicarlos por nombres, lo que hace muy legible la distribución.
 
-Un contenedor se hace grid con `display: grid`.  
-Podemos definir columnas con `grid-template-columns` y filas con `grid-template-rows`.
+En esta guía no se necesitaba un layout complejo de múltiples columnas para el contenido principal (es más bien una columna central de texto), pero para mostrar Grid hemos incluido un ejemplo en código: en la sección de "Ejemplos profesionales", los tres ejemplos (ASIR, DAW, DAM) se maquetan en una cuadrícula flexible. En pantallas anchas aparecen en tres columnas lado a lado, y automáticamente (gracias a Grid y a @media queries) en pantallas pequeñas se reorganizan en una sola columna. Esto se logró con unas pocas líneas de CSS Grid.
 
-Ejemplo:  
+### Cuándo usar Flexbox o Grid
 
-grid-template-columns: 1fr 2fr 1fr;
+Flexbox se recomienda para diseños lineales (una barra, un componente, una fila de cards que se envuelven en la siguiente línea si hay muchas, etc.), mientras que Grid brilla en layouts globales de página o secciones enteras donde se necesita controlar ambas dimensiones al mismo tiempo (por ejemplo, una galería de fotos en un grid de 3x3). A veces se combinan: por ejemplo, puedes usar Grid para el layout general de la página (header, sidebar, main, footer) y dentro de cada área usar Flexbox para alinear elementos internos de esa sección.
 
-Esto define 3 columnas donde la del medio es el doble de ancha que las laterales.
+En esta página de guía hemos documentado en los comentarios del CSS cómo se configuran estos sistemas. Cabe destacar que tanto Flexbox como Grid son ampliamente soportados por navegadores modernos. Aportan mucho al trabajo cotidiano, reduciendo la necesidad de hacks. Su uso práctico se ve en el código, por ejemplo:
 
-Podemos colocar hijos usando propiedades como:
+- `.nav-links { display: flex; justify-content: space-around; }` para distribuir equitativamente los enlaces de navegación.
 
-css
-Copiar
-Editar
-grid-column: 1 / 3;
-Esto haría que ese elemento abarque desde la columna 1 hasta antes de la 3 (o sea, que cubra columnas 1 y 2).
-
-Grid también soporta nombrar áreas y ubicarlos por nombres, lo que hace muy legible la distribución.
-
-En esta página de guía hemos documentado en los comentarios del CSS cómo se configuran estos sistemas.  
-Cabe destacar que tanto Flexbox como Grid son ampliamente soportados por navegadores modernos.  
-Aportan mucho al trabajo cotidiano, reduciendo la necesidad de hacks.
-
-Su uso práctico se ve en el código, por ejemplo:
-
-- `.nav-links { display: flex; justify-content: space-around; }`  
-  para distribuir equitativamente los enlaces de navegación.
-
-- `.ejemplos { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 1rem; }`  
-  para colocar tres bloques (ASIR, DAW, DAM) en una grilla con espacio (*gap*) entre ellos.
+- `.ejemplos { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 1rem; }` para colocar tres bloques (ASIR, DAW, DAM) en un grid con espacio (*gap*) entre ellos.
 
 ## Pseudo-clases y animaciones CSS
 
