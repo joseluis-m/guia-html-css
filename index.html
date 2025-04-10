@@ -71,25 +71,25 @@
           <button type="submit">Enviar</button>
         </fieldset>
       </form>
-      <p>En el formulario de ejemplo, todos los campos son obligatorios (atributo <code>required</code>) y el campo de email debe tener formato válido gracias a <code>type="email"</code>. Al intentar enviar sin llenar correctamente, el navegador mostrará errores de validación.</p>
+      <p>En el formulario de ejemplo, todos los campos son obligatorios (atributo <code>required</code>) y el campo de email debe tener formato válido gracias a <code>type="email"</code>. Al intentar enviar sin rellenar los campos correctamente, el navegador mostrará errores de validación.</p>
       <h3>SEO básico en HTML</h3>
       <p>Para SEO, es importante definir un <code>&lt;title&gt;</code> adecuado, usar meta descripción (<code>&lt;meta name="description"&gt;</code>) y estructurar el contenido con encabezados jerárquicos (<code>&lt;h1&gt;...&lt;h2&gt;</code>, etc.). También usar texto alternativo en imágenes (<code>alt</code>) y enlaces con texto descriptivo.</p>
       <p>Ejemplo de meta descripción en esta página (ver código fuente en el <code>&lt;head&gt;</code>):</p>
-      <pre class="codigo"><code>&lt;meta name="description" content="Guía integral en español sobre los fundamentos de HTML y CSS..."&gt;</code></pre>
+      <pre class="codigo"><code>&lt;meta name="description" content="Guía integral sobre los fundamentos de HTML y CSS..."&gt;</code></pre>
       <p>Con estas prácticas, los motores de búsqueda pueden entender mejor de qué trata la página y mostrarla pertinentemente en resultados.</p>
     </section>
 
     <!-- SECCIÓN: Fundamentos de CSS -->
     <section id="fundamentos-css">
       <h2>Fundamentos de CSS</h2>
-      <p>CSS (Cascading Style Sheets) es el lenguaje de estilos que se utiliza para describir la presentación visual de un documento HTML. Aquí veremos selectores, el modelo de caja, diseño responsivo con media queries, Flexbox, Grid y pseudo-clases/animaciones.</p>
+      <p>CSS (Cascading Style Sheets) es el lenguaje de estilos que se utiliza para describir la presentación visual de un documento HTML. Aquí veremos selectores, el modelo de caja, diseño responsive con media queries, Flexbox, Grid y pseudo-clases/animaciones.</p>
       <h3>Selectores en CSS</h3>
       <p>Un selector CSS permite apuntar a elementos HTML específicos para aplicarles estilos. Ejemplos:</p>
       <ul>
         <li><code>elemento</code>: Selecciona todas las etiquetas de ese tipo (ej: <code>p</code> selecciona todos los párrafos).</li>
         <li><code>.clase</code>: Selecciona todos los elementos con esa clase (ej: <code>.destacado</code>).</li>
         <li><code>#id</code>: Selecciona el elemento con ese id (ej: <code>#menu</code>).</li>
-        <li><code>padre hijo</code>: Selección por jerarquía (ej: <code>main p</code> párrafos dentro de &lt;main&gt;).</li>
+        <li><code>padre hijo</code>: Selección por jerarquía (ej: <code>main p</code> párrafos dentro de <code>&lt;main&gt;</code>).</li>
         <li>Pseudo-clases: ej: <code>a:hover</code> (cuando el cursor está sobre un enlace).</li>
       </ul>
       <p>La especificidad y el orden determinan qué estilos prevalecen en caso de conflicto (última regla aplicada y/o selector más específico gana).</p>
@@ -97,7 +97,7 @@
       <p>Todo elemento HTML se representa como una caja con contenido, padding (relleno), borde y margen. Por defecto, <code>width</code> y <code>height</code> aplican al contenido; el padding y border se suman aumentando el tamaño total. Podemos usar <code>box-sizing: border-box;</code> para incluir padding y border en el tamaño definido.</p>
       <p>Ejemplo: si a un <code>&lt;div&gt;</code> le damos <code>width: 200px; padding: 10px; border: 2px solid;</code>, el ancho total será 200 + 2*10 + 2*2 = 224px.</p>
       <p>Comprender el modelo de caja es crucial para ajustar correctamente los espacios y alineaciones en la página.</p>
-      <h3>Diseño responsivo con media queries</h3>
+      <h3>Diseño responsive con media queries</h3>
       <p>Las <em>media queries</em> permiten aplicar estilos dependiendo de las características del dispositivo o ventana. Por ejemplo, podemos cambiar el layout si la pantalla es menor a cierta anchura:</p>
       <pre class="codigo"><code>@media (max-width: 600px) {
   /* estilos para móviles */
@@ -105,7 +105,7 @@
     font-size: 16px;
   }
 }</code></pre>
-      <p>Así adaptamos la interfaz a móvil, tablet o desktop. En esta página, utilizamos media queries para que la barra de navegación y las secciones se ajusten en pantallas pequeñas (p. ej., el menú se verticaliza en móvil).</p>
+      <p>Así adaptamos la interfaz a móvil, tablet o desktop. En esta página, utilizamos media queries para que la barra de navegación y las secciones se ajusten en pantallas pequeñas (por ejemplo, el menú se verticaliza en móvil).</p>
       <h3>Layouts con Flexbox y Grid</h3>
       <p><strong>Flexbox</strong> nos facilita diseñar layouts en una dimensión (fila o columna). Por ejemplo, una barra de navegación horizontal o centrar un elemento verticalmente dentro de su contenedor. Simplemente aplicando <code>display: flex;</code> al contenedor y usando propiedades como <code>justify-content</code> (alineación horizontal) y <code>align-items</code> (alineación vertical) podemos lograr distribuciones comunes.</p>
       <p><strong>Grid</strong> es aún más poderoso para diseños de dos dimensiones (filas y columnas). Definimos un contenedor con <code>display: grid;</code> y establecemos columnas y filas con <code>grid-template-columns</code> y <code>grid-template-rows</code>. Podemos colocar los ítems en posiciones específicas de la cuadrícula. Es muy útil para maquetados de páginas completos o galerías.</p>
@@ -119,7 +119,7 @@
     <!-- SECCIÓN: Frameworks CSS -->
     <section id="frameworks">
       <h2>Frameworks CSS: Bootstrap y Tailwind</h2>
-      <p>En el mundo laboral, a menudo se utilizan frameworks CSS para acelerar el desarrollo. **Bootstrap** proporciona un conjunto de componentes y una grid responsiva lista para usar, mientras que **Tailwind CSS** ofrece utilidades de bajo nivel para construir estilos personalizados rápidamente.</p>
+      <p>En el mundo laboral, a menudo se utilizan frameworks CSS para acelerar el desarrollo. <strong>Bootstrap</strong> proporciona un conjunto de componentes y una grid responsiva lista para usar, mientras que <strong>Tailwind CSS</strong> ofrece utilidades de bajo nivel para construir estilos personalizados rápidamente.</p>
       <div class="row">
         <!-- Ejemplo usando clases de Bootstrap -->
         <div class="col-md-6">
@@ -152,9 +152,9 @@
       <h2>Integración de IA en el aprendizaje</h2>
       <p>Las herramientas de Inteligencia Artificial pueden apoyar el aprendizaje de HTML y CSS. Por ejemplo, asistentes como ChatGPT pueden responder dudas ("¿Cómo centro un div?") o generar código de ejemplo a partir de indicaciones en lenguaje natural.</p>
       <p>Existen <strong>generadores de código</strong> que, dada una descripción, producen código HTML/CSS. Estas herramientas permiten experimentar y obtener soluciones que luego el estudiante puede analizar. Es importante usarlas como complemento, comparando sus sugerencias con la documentación oficial y probando por uno mismo.</p>
-      <p>También hay asistentes integrados en editores de código (p.ej. GitHub Copilot) que sugieren código mientras escribes. Por ejemplo, al empezar a escribir <code>&lt;form&gt;</code> podrían autocompletar los campos comunes de un formulario.</p>
-      <p>Recomendación: usar la IA para reforzar el aprendizaje, no para evitarlo. Se puede pedir que explique por qué cierto CSS no funciona, o pedirle consejos de accesibilidad. Luego, verificar siempre en la práctica real lo obtenido. Las IAs son excelentes para obtener pistas rápidas, pero no siempre su output es perfecto o óptimo, por lo que el criterio del desarrollador sigue siendo clave.</p>
-      <p>Ejercicio propuesto: solicitar a ChatGPT que genere un pequeño código (por ej, una tarjeta de presentación con HTML y CSS), y luego tratar de entender cada línea de lo que generó, modificándolo para personalizarlo. Esto combina lo mejor de ambos mundos: la rapidez de la IA y la comprensión activa del estudiante.</p>
+      <p>También hay asistentes integrados en editores de código (por ejemplo, GitHub Copilot) que sugieren código mientras escribes. Por ejemplo, al empezar a escribir <code>&lt;form&gt;</code> podrían autocompletar los campos comunes de un formulario.</p>
+      <p>Recomendación: usar la IA para reforzar el aprendizaje, no para evitarlo. Se puede pedir que explique por qué cierto CSS no funciona, o pedirle consejos de accesibilidad. Luego, verificar siempre en la práctica real lo obtenido. Las IAs son excelentes para obtener pistas rápidas, pero no siempre su output es perfecto u óptimo, por lo que el criterio del desarrollador sigue siendo clave.</p>
+      <p>Ejercicio propuesto: solicitar a ChatGPT que genere un pequeño código (como una tarjeta de presentación con HTML y CSS), y luego tratar de entender cada línea de lo que generó, modificándolo para personalizarlo. Esto combina lo mejor de ambos mundos: la rapidez de la IA y la comprensión activa del estudiante.</p>
     </section>
 
     <!-- SECCIÓN: Ejemplos profesionales -->
@@ -164,7 +164,7 @@
       <div class="ejemplos"><!-- Usamos CSS Grid aquí -->
         <div class="ejemplo">
           <h3>ASIR</h3>
-          <p><em>Administración de Sistemas</em>: por ejemplo, crear la interfaz de una intranet de empresa o una página de monitorización de servidores. Un admin de sistemas puede usar HTML para estructurar datos (tablas de estado, formularios de configuración) y CSS para resaltar alertas (p.ej., servidores caídos en rojo). También podría personalizar la apariencia de un gestor de tickets interno usando estos conocimientos.</p>
+          <p><em>Administración de Sistemas</em>: crear la interfaz de una intranet de empresa o una página de monitorización de servidores. Un admin de sistemas puede usar HTML para estructurar datos (tablas de estado, formularios de configuración) y CSS para resaltar alertas (como servidores caídos en rojo). También podría personalizar la apariencia de un gestor de tickets interno usando estos conocimientos.</p>
         </div>
         <div class="ejemplo">
           <h3>DAW</h3>
@@ -172,7 +172,7 @@
         </div>
         <div class="ejemplo">
           <h3>DAM</h3>
-          <p><em>Multiplataforma</em>: creación de interfaces híbridas. Por ejemplo, usando Electron para una app de escritorio, se diseña la ventana principal con HTML/CSS. O en desarrollo móvil híbrido, se construyen pantallas de la app con tecnologías web. El conocimiento de responsive design ayuda a que la misma base HTML/CSS se adapte a distintas resoluciones de dispositivos. Un caso práctico: una app móvil de agenda donde la vista de contactos es una lista `<ul>` estilizada con CSS para parecer elementos nativos.</p>
+          <p><em>Multiplataforma</em>: creación de interfaces híbridas. Por ejemplo, usando Electron para una app de escritorio, se diseña la ventana principal con HTML/CSS. O en desarrollo móvil híbrido, se construyen pantallas de la app con tecnologías web. El conocimiento de responsive design ayuda a que la misma base HTML/CSS se adapte a distintas resoluciones de dispositivos. Un caso práctico: una app móvil de agenda donde la vista de contactos es una lista <code><ul></code> estilizada con CSS para parecer elementos nativos.</p>
         </div>
       </div>
     </section>
