@@ -110,7 +110,7 @@ En la hoja CSS de esta guía, hemos definido algunos estilos relacionados con el
 
 En resumen, dominar el modelo de caja permite controlar correctamente **espaciados y tamaños** en CSS. Es un concepto fundamental: **contenido + padding + border + margin = espacio total ocupado por el elemento**. Si esto se entiende bien, resolver problemas de diseño como "¿por qué mi elemento se desborda?" o "¿cómo centro esta caja?" se vuelve más sencillo.
 
-## Diseño responsivo con *media queries*
+## Diseño responsive con *media queries*
 
 Hoy en día es indispensable que un sitio web se vea bien y sea usable tanto en pantallas grandes de ordenador como en tablets o móviles. El **diseño responsive** (responsivo, *responsive design*) es la técnica que permite adaptar el diseño a diferentes tamaños de pantalla. En CSS, la herramienta principal para lograrlo son las **media queries** (consultas de medios).
 
@@ -158,7 +158,7 @@ Los más importantes son **Flexbox** y **CSS Grid**:
 ### Flexbox (Flexible Box Layout)
 
 Es un sistema de distribución en una dimensión (una fila horizontal o una columna vertical) muy útil para alinear y distribuir elementos en un contenedor.  
-Flexbox está diseñado para manejar el layout **en una sola dirección** a la vez (horizontalmente o verticalmente). Un contenedor flex (`display: flex`) permite que sus elementos internos (flex items) se expandan o contraigan para llenar espacio disponible y para alinearlos fácilmente al inicio, final, centro, etc., tanto en eje principal como en eje perpendicular. Con Flexbox es sencillo (por ejemplo) centrar un elemento tanto horizontal como verticalmente (algo que con técnicas antiguas era engorroso). También permite reordenar elementos, distribuir espacio sobrante equitativamente o según proporciones (usando la propiedad `flex` en los items), y crear diseños responsivos simples (por ejemplo, una barra de navegación donde algunos elementos ocupan más espacio que otros automáticamente).
+Flexbox está diseñado para manejar el layout **en una sola dirección** a la vez (horizontalmente o verticalmente). Un contenedor flex (`display: flex`) permite que sus elementos internos (flex items) se expandan o contraigan para llenar espacio disponible y para alinearlos fácilmente al inicio, final, centro, etc., tanto en eje principal como en eje perpendicular. Con Flexbox es sencillo (por ejemplo) centrar un elemento tanto horizontal como verticalmente (algo que con técnicas antiguas era engorroso). También permite reordenar elementos, distribuir espacio sobrante equitativamente o según proporciones (usando la propiedad `flex` en los items), y crear diseños responsive simples (por ejemplo, una barra de navegación donde algunos elementos ocupan más espacio que otros automáticamente).
 
 **Ejemplos de uso de Flexbox en la guía**:
 
@@ -286,196 +286,44 @@ En el ámbito profesional, la IA ya está ayudando a infinidad de desarrolladore
 
 Para contextualizar la teoría en situaciones reales, veamos cómo los conocimientos de HTML y CSS se aplican en proyectos típicos de cada especialidad:
 
----
+- **En ASIR (Administración de Sistemas Informáticos en Red)**: Si bien el foco de ASIR es la gestión de sistemas y redes, un administrador de sistemas a menudo necesita desplegar o mantener interfaces web internas. **Ejemplo**: La creación de una página web para el monitoreo de servidores o una intranet sencilla. Un técnico superior en ASIR podría usar HTML/CSS para construir un panel de control que muestre el estado de servicios (con íconos de colores para activo/inactivo) o un formulario interno para reportar incidencias de hardware. También, al implementar soluciones como WordPress o wikis corporativas, el administrador con conocimientos de HTML/CSS puede: personalizar las plantillas, ajustar estilos o solucionar problemas de visualización. Por ejemplo: al integrar un script de monitoreo, quizás deba maquetar el output en una tabla HTML estilizada para fácil lectura; documentar la infraestructura en una página HTML con diagramas e imágenes; o asegurarse de usar etiquetas semánticas y diseño responsive para que se vea bien en distintos dispositivos dentro de la empresa.
 
-### • En ASIR (Administración de Sistemas):
+- **En DAW (Desarrollo de Aplicaciones Web)**: Aquí es donde HTML y CSS son el pan de cada día. Un desarrollador web debe maquetar interfaces de usuario atractivas y funcionales. **Ejemplo**: El front-end de una aplicación de gestión (clientes, ventas, etc.) hecha en un proyecto final de DAW. El estudiante DAW aplicará etiquetas semánticas para la estructura (`header` con logo y menú, `main` con formularios de registro, tablas de datos, etc.), formularios bien construidos para CRUD de datos y CSS (posiblemente con Flexbox/Grid) para crear un dashboard responsive. Otro ejemplo típico es un **sitio web corporativo** o una **landing page** de marketing: requiere maquetar secciones de hero (encabezado con imagen de fondo y texto superpuesto), secciones de productos en grid, testimonios en carrusel (podría usar Bootstrap allí), y un footer con información de contacto. Todo esto demandará dominar tanto HTML (por SEO se cuidarán encabezados, alt en imágenes, microdatos quizás) como CSS (para diseño atractivo, animaciones sutiles, adaptabilidad móvil). En los proyectos DAW se valora mucho la correcta separación de contenido (HTML) y presentación (CSS), así como usar diseños semánticos, *wireframes*, archivos ordenados, etc., tal como se ejemplifica en esta guía.
 
-Si bien el foco de ASIR es la gestión de sistemas y redes, un administrador de sistemas a menudo necesita desplegar o mantener interfaces web internas.  
+- **En DAM (Desarrollo de Aplicaciones Multiplataforma)**: Aunque el foco aquí son aplicaciones de escritorio y móviles nativas, el mundo multiplataforma frecuentemente incorpora tecnologías web. **Ejemplo**: Desarrollo de una aplicación móvil híbrida o progresiva (PWA) usando Ionic/Cordova, React Native Web o tecnologías similares donde partes de la interfaz son HTML/CSS renderizado en webviews. Un DAM con conocimientos web puede crear la interfaz de una app móvil utilizando HTML5 para la estructura y CSS (junto con frameworks como Ionic que proveen componentes) para el estilo, logrando que la app luzca nativa. Otro ejemplo es el uso de **Electron** para aplicaciones de escritorio: Electron utiliza HTML/CSS/JS para crear UI de escritorio; muchos editores de código y herramientas (como Visual Studio Code) funcionan así. Así que un DAM podría terminar estilando ventanas de una app de escritorio con CSS. Incluso en desarrollo Android o iOS nativo, a veces se utiliza HTML/CSS para contenidos embebidos (como mostrar una ayuda formateada dentro de la app). Un ejemplo concreto podría ser un proyecto DAM donde se haga un cliente de chat multiplataforma y se diseñe una pequeña página HTML para el manual de uso integrado en la aplicación, o para mostrar mensajes con formato (usando WebView). Los fundamentos de maquetación y estilos aprendidos se aplican directamente allí.
 
-**Ejemplo**:  
-La creación de una página web para el monitoreo de servidores o una intranet sencilla.  
-Un ASIR podría usar HTML/CSS para construir un panel de control que muestre el estado de servicios (con íconos de colores para activo/inactivo)  
-o un formulario interno para reportar incidencias de hardware.
+En todos estos casos, vemos que **HTML/CSS son habilidades transversales**. Un administrador de sistemas con conocimiento web puede resolver necesidades sin depender totalmente de un desarrollador; un desarrollador web obviamente lo requiere para su día a día; y un desarrollador multiplataforma amplía su horizonte pudiendo crear interfaces web/híbridas
 
-También, al implementar soluciones como WordPress o wikis corporativas, el administrador con conocimientos de HTML/CSS puede:
-- personalizar las plantillas
-- ajustar estilos
-- solucionar problemas de visualización
+> *Actualmente, DAM se centra en crear aplicaciones que funcionan en diversas plataformas (móviles, escritorio, etc.) y DAW se especializa en aplicaciones web, lo cual ofrece ventajas específicas al abordar los retos técnicos de cada entorno. Sin embargo, existen opiniones en la comunidad que sugieren que, a futuro, la creciente convergencia de tecnologías y el avance de frameworks multiplataforma harán que esta distinción desaparezca, favoreciendo un enfoque de desarrollo más integral y unificado. Actualmente, la especialización aún es valiosa para responder a demandas concretas del mercado, pero es posible que en pocos años la línea que separa DAM de DAW sea menos relevante.*
 
-Por ejemplo:
-- al integrar un script de monitoreo, quizás deba maquetar el output en una tabla HTML estilizada para fácil lectura
-- documentar la infraestructura en una página HTML con diagramas e imágenes  
-- asegurarse de usar etiquetas semánticas y diseño responsive para que se vea bien en distintos dispositivos dentro de la empresa
+<br>
 
----
-
-### • En DAW (Desarrollo de Aplicaciones Web):
-
-Aquí es donde HTML y CSS son el pan de cada día.  
-Un desarrollador web debe maquetar interfaces de usuario atractivas y funcionales.
-
-**Ejemplo**:  
-El front-end de una aplicación de gestión (clientes, ventas, etc.) hecha en un proyecto final de DAW.  
-El estudiante DAW aplicará etiquetas semánticas para la estructura (`header` con logo y menú, `main` con formularios de registro, tablas de datos, etc.),  
-formularios bien construidos para CRUD de datos, y CSS (posiblemente con Flexbox/Grid) para crear un dashboard responsivo.
-
-Otro ejemplo típico es un **sitio web corporativo** o una **landing page** de marketing:  
-requiere maquetar secciones de hero (encabezado con imagen de fondo y texto superpuesto),  
-secciones de productos en grilla, testimonios en carrusel (podría usar Bootstrap allí), y un footer con información de contacto.
-
-Todo esto demandará dominar tanto HTML (por SEO se cuidarán encabezados, alt en imágenes, microdatos quizás) como CSS (para diseño atractivo, animaciones sutiles, adaptabilidad móvil).  
-En los proyectos DAW se valora mucho la correcta separación de contenido (HTML) y presentación (CSS),  
-así como usar diseños semánticos, *wireframes*, archivos ordenados, etc., tal como se ejemplifica en esta guía.
-
-### • En DAM (Desarrollo de Aplicaciones Multiplataforma):
-
-Aunque el foco aquí son aplicaciones de escritorio y móviles nativas,  
-el mundo multiplataforma frecuentemente incorpora tecnologías web.
-
-**Ejemplo**:  
-Desarrollo de una aplicación móvil híbrida o progresiva (PWA) usando Ionic/Cordova, React Native Web o tecnologías similares  
-donde partes de la interfaz son HTML/CSS renderizado en webviews.
-
-Un DAM con conocimientos web puede crear la interfaz de una app móvil utilizando HTML5 para la estructura y CSS  
-(junto con frameworks como Ionic que proveen componentes) para el estilo, logrando que la app luzca nativa.
-
-Otro ejemplo es el uso de **Electron** para aplicaciones de escritorio:  
-Electron utiliza HTML/CSS/JS para crear UI de escritorio;  
-muchos editores de código y herramientas (como Visual Studio Code) funcionan así.  
-Así que un DAM podría terminar estilando ventanas de una app de escritorio con CSS.
-
-Incluso en desarrollo Android o iOS nativo, a veces se utiliza HTML/CSS para contenidos embebidos  
-(como mostrar una ayuda formateada dentro de la app).  
-
-Un ejemplo concreto podría ser un proyecto DAM donde se haga un cliente de chat multiplataforma  
-y se diseñe una pequeña página HTML para el manual de uso integrado en la aplicación,  
-o para mostrar mensajes con formato (usando WebView).  
-Los fundamentos de maquetación y estilos aprendidos se aplican directamente allí.
-
----
-
-En todos estos casos, vemos que **HTML/CSS son habilidades transversales**.  
-Un administrador de sistemas con conocimiento web puede resolver necesidades sin depender totalmente de un desarrollador;  
-un desarrollador web obviamente lo requiere para su día a día;  
-y un desarrollador multiplataforma amplía su horizonte pudiendo crear interfaces web/híbridas.
-
-## Ejercicios prácticos y retos
+# Ejercicios prácticos y retos
 
 Para consolidar el aprendizaje, se proponen algunos ejercicios y desafíos prácticos que los estudiantes pueden realizar:
 
-1. **Maquetar una página sencilla con HTML semántico**:  
-   Dado un contenido (por ejemplo, el texto de una noticia o artículo),  
-   estructúralo en HTML5 usando `<header>`, `<nav>`, `<article>`, `<aside>` y `<footer>`.  
-   Asegúrate de incluir al menos una lista, un enlace y una imagen con `alt`.  
-   _Reto adicional_: valida tu HTML con una herramienta como [W3C Validator](https://validator.w3.org/) para asegurarte de que no tiene errores.
+1. **Maquetar una página sencilla con HTML semántico**: Dado un contenido (por ejemplo, el texto de una noticia o artículo), estructúralo en HTML5 usando `<header>`, `<nav>`, `<article>`, `<aside>` y `<footer>`. Asegúrate de incluir al menos una lista, un enlace y una imagen con `alt`. _Reto adicional_: valida tu HTML con una herramienta como [W3C Validator](https://validator.w3.org/) para asegurarte de que no tiene errores.
+2. **Formulario de contacto con validación nativa**: Crea un formulario de contacto que solicite nombre, email, teléfono y mensaje. Utiliza los tipos de input adecuados (`type="email"`, `type="tel"`, etc.) y marca los campos obligatorios con `required`. Añade también un `pattern` para validar el teléfono (por ej., que sean 9 dígitos). Prueba el formulario en un navegador y verifica los mensajes de error que aparecen al dejar campos vacíos o con formato inválido. _Reto adicional_: investiga cómo cambiar el mensaje de validación por defecto a español (hint: atributo `lang` o API Constraint Validation).
+3. **Diseño responsive con media queries**: Comienza con un HTML sencillo (puede ser la estructura del ejercicio 1 o 2) y su correspondiente CSS para desktop. Luego agrega *media queries* para que en pantallas pequeñas la disposición cambie. Por ejemplo, si en desktop tienes un `<aside>` al lado del `<article>` (dos columnas), en móvil haz que el `<aside>` aparezca debajo del `<article>` (una sola columna). Prueba redimensionando la ventana del navegador o usando las herramientas de desarrollador en modo móvil para asegurarte de que el diseño se adapta correctamente.
+4. **Ejercicio con Flexbox**: Crea un contenedor `<div>` con 5 cajas dentro (pueden ser `<div>` con una breve palabra o número). Usa CSS Flexbox para distribuir esas cajas con espacio igual entre ellas, centradas horizontalmente y alineadas abajo (si alguna tiene más texto que otra). Luego, modifica el CSS para que en pantallas estrechas (mobile) el flex contenedor haga `wrap` y las cajas se muestren en varias filas. Este ejercicio te hará manipular `justify-content`, `align-items`, `flex-wrap` y posiblemente `align-content`. _Reto adicional_: Intenta utilizar `order` (propiedad flex) para cambiar el orden visual de las cajas sin alterar el HTML.
+5. **Grid avanzado**: Diseña una galería de imágenes usando CSS Grid. Por ejemplo, 6 imágenes que en desktop se muestren en 3 columnas x 2 filas, y en móvil en 2 columnas x 3 filas (o 1 columna x 6). Usa `grid-template-columns` con `fr` y aplica `gap` para separar las imágenes. Asegúrate de que las imágenes tengan `max-width: 100%` en CSS para que no se desborden de su celda. _Reto adicional_: Haz que alguna imagen ocupe dos columnas o dos filas (utilizando `grid-column: span 2` en el CSS correspondiente).
+6. **Utilizando un framework**: Toma uno de tus ejercicios anteriores (por ejemplo, el formulario de contacto) y reházlo usando **Bootstrap**. Aprovecha su sistema de grid (clases `row`, `col`), sus componentes de formulario (clases como `form-control` en inputs, etc.) y estilos predeterminados. Compara cuánto CSS tuviste que escribir a mano versus cuánto vino ya estilado por Bootstrap. _Reto adicional_: Repite con **Tailwind CSS** (puedes usar su CDN para no tener que configurar build). Escribe las clases utilitarias directamente en el HTML para dar estilo similar. Reflexiona sobre las diferencias en el enfoque de ambos frameworks.
+7. **Experimento con ChatGPT u otra IA**: Plantea un pequeño desafío, por ejemplo: _"crear un botón con efecto hover que parpadee mediante CSS"_, primero intenta resolverlo por tu cuenta. Luego pregunta a ChatGPT cómo lo haría. Compara su solución con la tuya, pruébala y ajusta según tu criterio. Este ejercicio ayuda a aprender a validar y entender las sugerencias de la IA en lugar de tomarlas como caja negra.
 
-2. **Formulario de contacto con validación nativa**:  
-   Crea un formulario de contacto que solicite nombre, email, teléfono y mensaje.  
-   Utiliza los tipos de input adecuados (`type="email"`, `type="tel"`, etc.)  
-   y marca los campos obligatorios con `required`.  
-   Añade también un `pattern` para validar el teléfono (por ej., que sean 9 dígitos).  
-   Prueba el formulario en un navegador y verifica los mensajes de error que aparecen al dejar campos vacíos o con formato inválido.  
-   _Reto adicional_: investiga cómo cambiar el mensaje de validación por defecto a español (hint: atributo `lang` o API Constraint Validation).
+<br>
 
-3. **Diseño responsivo con media queries**:  
-   Comienza con un HTML sencillo (puede ser la estructura del ejercicio 1 o 2)  
-   y su correspondiente CSS para desktop.  
-   Luego agrega *media queries* para que en pantallas pequeñas la disposición cambie.  
+# Documentación del código y preparación para GitHub
 
-   Por ejemplo, si en desktop tienes un `<aside>` al lado del `<article>` (dos columnas),  
-   en móvil haz que el `<aside>` aparezca debajo del `<article>` (una sola columna).  
-   Prueba redimensionando la ventana del navegador o usando las herramientas de desarrollador en modo móvil  
-   para asegurarte de que el diseño se adapta correctamente.
+Todo el código fuente de esta guía (HTML y CSS) está **comentado** para explicar la finalidad de cada sección y muchas de las líneas clave, de modo que al leer el código los estudiantes puedan entender el propósito de cada fragmento. Por ejemplo, al inicio del HTML verás comentarios indicando dónde comienza la cabecera, dónde está la navegación interna, cada sección principal tiene un comentario identificándola, y en el CSS hay bloques separados con comentarios como `/* Estilos de navegación */` o `/* Responsive */` para agrupar reglas relacionadas. Estos comentarios sirven como **documentación interna** dentro del código.
 
-4. **Ejercicio con Flexbox**:  
-   Crea un contenedor `<div>` con 5 cajas dentro (pueden ser `<div>` con una breve palabra o número).  
-   Usa CSS Flexbox para distribuir esas cajas con espacio igual entre ellas,  
-   centradas horizontalmente y alineadas abajo (si alguna tiene más texto que otra).  
+Adicionalmente, esta explicación extensa que estás leyendo actuaría como una **documentación externa (README)** que describe cada parte del HTML. De hecho, este proyecto subido a GitHub, incluye un archivo `README.md` en formato Markdown (lo estás leyendo ahora mismo) donde se detalla la estructura del proyecto, instrucciones de uso, y aclaraciones de cómo está organizado el código. Esto cumple con el punto de tener el proyecto listo para GitHub: los archivos están listos para ser versionados y compartidos, con una documentación que facilita a cualquier colaborador entender la finalidad de cada porción.
 
-   Luego, modifica el CSS para que en pantallas estrechas (mobile) el flex contenedor haga `wrap`  
-   y las cajas se muestren en varias filas.  
-   Este ejercicio te hará manipular `justify-content`, `align-items`, `flex-wrap` y posiblemente `align-content`.  
-   _Reto adicional_: Intenta utilizar `order` (propiedad flex) para cambiar el orden visual de las cajas sin alterar el HTML.
+En cuanto a la **escalabilidad y adaptabilidad** del diseño por los estudiantes, se ha mantenido un estilo lo más modular y sencillo posible. Por ejemplo, la hoja CSS utiliza variables CSS (custom properties) para colores principales, de manera que cambiando un par de valores se puede alterar la paleta completa. También se evitó usar IDs en CSS para facilitar la extensión del código  
+y evitar conflictos de especificidad. Todo está pensado para que un estudiante pueda tomar esta base y ampliarla fácilmente: añadir otra sección en HTML siguiendo la estructura comentada, agregar nuevas clases en el CSS siguiendo los patrones existentes, etc. El código comentado guía ese proceso.
 
-5. **Grid avanzado**:  
-   Diseña una galería de imágenes usando CSS Grid.  
-   Por ejemplo, 6 imágenes que en desktop se muestren en 3 columnas x 2 filas,  
-   y en móvil en 2 columnas x 3 filas (o 1 columna x 6).
+Además, se cumple con tener un **diseño moderno y profesional**: se eligieron tipografías legibles (una fuente sans-serif limpia para párrafos y una serif elegante para títulos integradas desde Google Fonts en el `<head>`), junto a una paleta de colores coherente (azul para cabecera/acento y grises claros como fondo alterno). El CSS está organizado por secciones y bien comentado, facilitando la comprensión del _qué_ se hace y, sobre todo, _del porqué_ de cada decisión de diseño.
 
-   Usa `grid-template-columns` con `fr` y aplica `gap` para separar las imágenes.  
-   Asegúrate de que las imágenes tengan `max-width: 100%` en CSS para que no se desborden de su celda.  
-   _Reto adicional_: Haz que alguna imagen ocupe dos columnas o dos filas (utilizando `grid-column: span 2` en el CSS correspondiente).
-
-6. **Utilizando un framework**:  
-   Toma uno de tus ejercicios anteriores (por ejemplo, el formulario de contacto) y reházlo usando **Bootstrap**.  
-   Aprovecha su sistema de grid (clases `row`, `col`), sus componentes de formulario (clases como `form-control` en inputs, etc.)  
-   y estilos predeterminados.  
-   Compara cuánto CSS tuviste que escribir a mano versus cuánto vino ya estilado por Bootstrap.  
-
-   _Reto adicional_: Repite con **Tailwind CSS** (puedes usar su CDN para no tener que configurar build).  
-   Escribe las clases utilitarias directamente en el HTML para dar estilo similar.  
-   Reflexiona sobre las diferencias en el enfoque de ambos frameworks.
-
-7. **Experimento con ChatGPT u otra IA**:  
-   Plantea un pequeño desafío, por ejemplo:  
-   _"crear un botón con efecto hover que parpadee mediante CSS"_,  
-   primero intenta resolverlo por tu cuenta. Luego pregunta a ChatGPT cómo lo haría.  
-   Compara su solución con la tuya, pruébala y ajusta según tu criterio.  
-
-   Este ejercicio ayuda a aprender a validar y entender las sugerencias de la IA  
-   en lugar de tomarlas como caja negra.
-
-## Documentación del código y preparación para GitHub
-
-Todo el código fuente de esta guía (HTML y CSS) está profusamente **comentado**  
-para explicar la finalidad de cada sección y muchas de las líneas clave,  
-de modo que al leer el código los estudiantes puedan entender el propósito de cada fragmento.  
-
-Por ejemplo, al inicio del HTML verás comentarios indicando dónde comienza la cabecera,  
-dónde está la navegación interna, cada sección principal tiene un comentario identificándola,  
-y en el CSS hay bloques separados con comentarios como `/* Estilos de navegación */`  
-o `/* Responsive */` para agrupar reglas relacionadas.  
-Estos comentarios sirven como **documentación interna** dentro del código.
-
-Adicionalmente, esta explicación extensa que estás leyendo actuaría como una  
-**documentación externa (README)** que describe cada parte del HTML.  
-
-De hecho, si este proyecto se sube a GitHub, conviene incluir un archivo  
-`README.md` (en formato Markdown) —mucho del contenido de esta guía podría conformar ese README—  
-donde se detalla la estructura del proyecto, instrucciones de uso,  
-y aclaraciones de cómo está organizado el código.  
-
-Esto cumple con el punto de tener el proyecto listo para GitHub:  
-los archivos están listos para ser versionados y compartidos,  
-con una documentación que facilita a cualquier colaborador entender la finalidad de cada porción.
-
-## Escalabilidad, diseño profesional y entrega
-
-En cuanto a la **escalabilidad y adaptabilidad** del diseño por los estudiantes,  
-se ha mantenido un estilo lo más modular y sencillo posible.  
-Por ejemplo, la hoja CSS utiliza variables CSS (custom properties) para colores principales,  
-de manera que cambiando un par de valores se puede alterar la paleta completa.  
-También se evitó usar IDs en CSS para facilitar la extensión del código  
-y evitar conflictos de especificidad.  
-
-Todo está pensado para que un estudiante pueda tomar esta base y ampliarla fácilmente:  
-añadir otra sección en HTML siguiendo la estructura comentada,  
-agregar nuevas clases en el CSS siguiendo los patrones existentes, etc.  
-El código comentado guía ese proceso.
-
-Además, se cumple con tener un **diseño moderno y profesional**:  
-se eligieron tipografías legibles (una fuente sans-serif limpia para párrafos  
-y una serif elegante para títulos integradas desde Google Fonts en el `<head>`),  
-junto a una paleta de colores coherente (azul para cabecera/acento  
-y grises claros como fondo alterno).  
-
-El CSS está organizado por secciones y bien comentado,  
-facilitando la comprensión del _qué_ se hace y, sobre todo,  
-_del por qué_ de cada decisión de diseño.
-
----
-
-### Archivos del proyecto
+## Archivos del proyecto
 
 Los archivos fuente principales del proyecto son:
 
@@ -483,5 +331,4 @@ Los archivos fuente principales del proyecto son:
 - `styles.css`: con buenas prácticas CSS, uso de Flexbox/Grid, media queries y comentarios.
 - `README.md`: (este archivo) con explicación general y justificación de diseño y estructura.
 
-Estos archivos están preparados para subirse a un repositorio en GitHub  
-y permitir su distribución, reutilización o colaboración educativa.
+Estos archivos están preparados con el objetivo de subirse a este repositorio en GitHub y permitir su distribución, reutilización o colaboración educativa.
