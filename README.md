@@ -47,17 +47,11 @@ En el código, hemos comentado cada parte del formulario para explicar su rol (p
 Aunque el posicionamiento en buscadores (SEO) es un tema extenso que involucra muchos factores, desde el punto de vista de HTML hay algunas prácticas básicas que se han aplicado en esta guía:
 
 - **Título de la página único y descriptivo**: La etiqueta `<title>` en el `<head>` contiene un título claro ("Guía integral de HTML y CSS...") que describe el contenido. Los buscadores muestran este título en los resultados, y debe tener idealmente menos de ~60 caracteres y contener palabras clave relevantes.
-
 - **Meta descripción**: En el `<head>` se incluye `<meta name="description" content="...">` con un resumen de la página. Esta descripción suele aparecer debajo del título en los resultados de Google. Una meta-descripción bien redactada puede mejorar la tasa de clicks hacia tu página (por ejemplo, la descripción de esta guía menciona que es un recurso integral en español para fundamentos de HTML/CSS en FP, lo que la hace atractiva para el público objetivo).
-
 - **Uso de encabezados jerárquicos**: Estructurar el contenido con `<h1>` para el título principal y `<h2>`, `<h3>`, etc. para subsecciones ayuda a los buscadores a entender la organización del contenido. En esta página, el `<h1>` es el título de la guía, y cada sección principal tiene un `<h2>` (ej.: "Fundamentos de HTML", "Fundamentos de CSS", etc.), con posibles `<h3>` para subdivisiones internas. Mantener esta jerarquía coherente es importante para SEO y accesibilidad, ya que refleja la importancia relativa de cada sección.
-
 - **Etiquetas semánticas**: Como se mencionó, ayudan al SEO al proporcionar contexto. Por ejemplo, Google reconoce `<nav>` como navegación, `<article>` como contenido autónomo, etc., lo cual puede influir positivamente. **Las etiquetas semánticas son esenciales para SEO** ya que los motores de búsqueda las usan para entender mejor la estructura de la página.
-
 - **Texto alternativo en imágenes**: Cualquier imagen (`<img>`) tiene atributo `alt` descriptivo. No solo es vital para usuarios que no pueden ver la imagen, sino que permite a Google indexar y entender el contenido de la imagen. Por ejemplo, si en una sección se muestra un diagrama o logo, el alt lo describe ("Diagrama del modelo de caja en CSS", etc.).
-
 - **URLs amigables y dominio**: Este punto aplica más cuando uno despliega el sitio; en nuestro caso, al ser una sola página local o para GitHub Pages, la URL será fija. En un proyecto real, se recomienda usar URLs legibles y relacionadas con el contenido.
-
 - **Meta etiquetas adicionales**: Por simplicidad, esta guía no profundiza en meta-etiquetas avanzadas (como `meta keywords` –que hoy en día tienen poca relevancia–, o las metaetiquetas de Open Graph para redes sociales). Sin embargo, cabe destacar que **las meta-etiquetas más importantes para SEO** son el título y la descripción, además de la correcta estructuración con encabezados. Una frase célebre es que *"las meta etiquetas son la base del SEO"*, siendo de lo primero que se configura al crear una página web.
 
 En resumen, siguiendo estas prácticas HTML básicas (estructura semántica, títulos y metadatos adecuados, alt en imágenes, etc.), sentamos una buena base para que la página sea indexada correctamente por los motores de búsqueda y sea accesible para los usuarios. Los contenidos de esta guía están organizados pensando en ello, de modo que resulten claros tanto para usuarios como para buscadores.
@@ -73,19 +67,13 @@ A continuación, se abordan los temas fundamentales de CSS necesarios para dar e
 Los **selectores** nos permiten indicar a qué elementos HTML se aplican ciertas reglas CSS. CSS ofrece multitud de tipos de selectores, pero los más usados incluyen:
 
 - **Selector de elemento** (o etiqueta): se refiere a todas las etiquetas de un tipo dado. Ejemplo: `p { ... }` aplicará a todos los párrafos `<p>` de la página; `header { ... }` al elemento `<header>`, etc.
-
 - **Selector de clase**: se define en HTML con el atributo `class`. En CSS se denota con un punto `.` seguido del nombre de la clase. Ejemplo: `.destacado { color: red; }` afecta a cualquier elemento con `class="destacado"`. Es útil para aplicar estilos a grupos específicos de elementos, independientemente de su tipo.
-
 - **Selector de ID**: usa el atributo `id` de un elemento, y en CSS se denota con `#`.  
   Por ejemplo, `#menu { ... }` estilizará el elemento con `id="menu"`.  
   Los IDs deben ser únicos en la página, por lo que este selector apunta como máximo a un elemento. Su uso se reserva para casos necesarios (a veces para JavaScript), pero en CSS moderno se prefieren más las clases que los IDs por flexibilidad.
-
 - **Selectores de descendiente/combinadores**: permiten seleccionar elementos en función de su posición en el árbol DOM. Por ejemplo, `main p { ... }` estiliza solo los `<p>` que estén dentro de `<main>`. Otro ejemplo, `section#intro em { ... }` aplicaría a `<em>` dentro de `<section id="intro">`. Existen combinadores de hijo directo (`>`), de hermano adyacente (`+`), de hermano general (`~`), etc., para casos más precisos.
-
 - **Selectores de atributo**: seleccionan elementos según la presencia o valor de un atributo. Por ejemplo, `input[type="email"] { ... }` podría dar estilo a campos de entrada de email, o `a[target="_blank"] { ... }` a enlaces que abren en nueva pestaña.
-
 - **Selectores universales**: el asterisco `*` selecciona *todos* los elementos. Se usa con cuidado, típicamente en reseteos o para heredar estilos globales (`* { box-sizing: border-box; }` es un ejemplo común para aplicar el modelo de caja alternativo a todo elemento, de lo cual hablaremos en el modelo de caja).
-
 - **Selectores de pseudo-clase**: se tratan en detalle más abajo, pero mencionar aquí que notaciones como `a:hover` o `input:focus` también actúan como selectores que eligen elementos en cierto estado.
 
 Al escribir CSS, hay que considerar la **especificidad** de los selectores: por ejemplo, un selector de ID tiene más peso que uno de clase, y este a su vez más que uno de elemento. Si dos reglas entran en conflicto, la de mayor especificidad (o la última definida si la especificidad es igual) prevalecerá. Para mantener el código manejable, es recomendable no abusar de selectores demasiado complejos; a menudo una combinación de clases bien pensadas es suficiente para seleccionar lo que queremos estilizar.
@@ -98,15 +86,17 @@ Los comentarios en el CSS explican la intención de cada bloque de estilos.
 ![Diagrama del modelo de caja en CSS](https://media.gcflearnfree.org/content/5ef2084faaf0ac46dc9c10be_06_23_2020/box_model.png "CSS Box Model")
 
 En CSS, cada elemento HTML se representa como una **caja rectangular** compuesta por varias áreas: el contenido, el relleno (*padding*), el borde (*border*) y el margen (*margin*). En otras palabras, todo lo que vemos en la página está dentro de cajas, y comprender cómo funcionan es clave para controlar el diseño. **Cada caja tiene un área de contenido** (que contiene el texto, imagen u otros elementos hijos) y opcionalmente áreas de relleno alrededor del contenido, un borde alrededor del relleno, y un margen externo fuera del borde. El tamaño de cada área se puede ajustar mediante propiedades CSS:
+
 - `width`/`height`: afectan el área de contenido
 - `padding`: el espacio entre contenido y borde
 - `border-width`: (y estilo/color de borde) para el borde
 - `margin`: para el espacio externo
 
-En el diagrama (y en las herramientas de desarrollo de los navegadores, que suelen mostrar este modelo visualmente), podemos identificar:  
-- **La caja de contenido** (*content box*) en el centro, cuyo tamaño depende de lo que contiene o de medidas que le demos  
-- **El padding** alrededor, generalmente transparente, que empuja el contenido hacia adentro  
-- **El border** alrededor del padding, con grosor y color definidos  
+En el diagrama (y en las herramientas de desarrollo de los navegadores, que suelen mostrar este modelo visualmente), podemos identificar:
+
+- **La caja de contenido** (*content box*) en el centro, cuyo tamaño depende de lo que contiene o de medidas que le demos
+- **El padding** alrededor, generalmente transparente, que empuja el contenido hacia adentro
+- **El border** alrededor del padding, con grosor y color definidos
 - **El margin** fuera del borde, que es espacio en blanco que separa esta caja de otras cajas vecinas
 
 ### ¿Por qué es importante esto?
@@ -144,9 +134,9 @@ Otros usos comunes de media queries incluyen ajustar tamaños de fuente, cambiar
 
 Es importante elegir algunos **puntos de corte (breakpoints)** adecuados, basados en el contenido y no solo en dispositivos específicos. Un diseño típico puede tener breakpoints alrededor de:
 
-- **600px** (teléfonos en modo vertical)  
-- **768px** (tablet vertical o teléfonos grandes)  
-- **992px** (tablet horizontal o pantallas medianas)  
+- **600px** (teléfonos en modo vertical)
+- **768px** (tablet vertical o teléfonos grandes)
+- **992px** (tablet horizontal o pantallas medianas)
 - **1200px** (desktop grande)
 
 En esta página, dado que principalmente es texto, con un diseño de una columna, no fueron necesarias muchas variaciones; pero se incluyó al menos una para demostrar la técnica.
@@ -170,11 +160,13 @@ Los más importantes son **Flexbox** y **CSS Grid**:
 Es un sistema de distribución en una dimensión (una fila horizontal o una columna vertical) muy útil para alinear y distribuir elementos en un contenedor.  
 Flexbox está diseñado para manejar el layout **en una sola dirección** a la vez (horizontalmente o verticalmente). Un contenedor flex (`display: flex`) permite que sus elementos internos (flex items) se expandan o contraigan para llenar espacio disponible y para alinearlos fácilmente al inicio, final, centro, etc., tanto en eje principal como en eje perpendicular. Con Flexbox es sencillo (por ejemplo) centrar un elemento tanto horizontal como verticalmente (algo que con técnicas antiguas era engorroso). También permite reordenar elementos, distribuir espacio sobrante equitativamente o según proporciones (usando la propiedad `flex` en los items), y crear diseños responsivos simples (por ejemplo, una barra de navegación donde algunos elementos ocupan más espacio que otros automáticamente).
 
-**Ejemplos de uso de Flexbox en la guía**:  
+**Ejemplos de uso de Flexbox en la guía**:
+
 - La barra de navegación del header está construida con `display: flex` para alinear los enlaces en fila y separarlos con espacio entre ellos.
 - En la sección de ejercicios, podríamos usar flexbox para colocar tarjetas de reto una al lado de la otra en filas.
 
 **Propiedades clave de Flexbox**:
+
 - `justify-content`: alineación horizontal de los items (al inicio, centro, fin, espacio equidistante, etc.).
 - `align-items`: alineación vertical de los items dentro del contenedor flex.
 - `flex-direction`: fila o columna.
@@ -217,190 +209,78 @@ Algunas de las más comunes:
 
 Las pseudo-clases hacen muy poderoso el CSS para interactuar con la acción del usuario. Por ejemplo, un simple *hover* en CSS puede sustituir la necesidad de un script para resaltar botones.
 
----
+## Animaciones en CSS
 
-### Animaciones en CSS
+Por otro lado, las **animaciones en CSS** permiten dar dinamismo a la página de forma ligera. Hay dos mecanismos principales:
 
-Por otro lado, las **animaciones en CSS** permiten dar dinamismo a la página de forma ligera.  
-Hay dos mecanismos principales:
+- **Transiciones (*transitions*)**: Permiten que un cambio de estilo ocurra de forma **gradual y animada** en lugar de instantánea. Por ejemplo, si un enlace cambia de color en `:hover`, podemos agregar `transition: color 0.3s;` al enlace, de modo que al hacer *hover* el color se desplace suavemente en 0.3 segundos en vez de cambiar abruptamente. En la guía, los botones y enlaces tienen transiciones en propiedades como background, color o transform para lograr efectos de *hover* más agradables.
+- **Animaciones con `@keyframes`**: Son más complejas; permiten definir una secuencia de estados (fotogramas clave) y crear animaciones más elaboradas que pueden ejecutarse independientemente del *hover* o no (por ejemplo, una animación continua al cargar la página). Se define un `@keyframes nombre` con pasos del 0% al 100% (o *from/to*) indicando cómo cambian ciertas propiedades, luego se aplica a un elemento con `animation: nombre 5s infinite;` (por ejemplo). Un uso podría ser hacer parpadear un texto, o mover un elemento. En esta página, por simplicidad, no se incluyó ninguna animación compleja con *keyframes*, pero sí pequeñas transiciones y un efecto de *hover* que escala ligeramente un elemento usando `transform: scale(1.05)` para hacerlo destacar al pasar el cursor.
 
-- **Transiciones (*transitions*)**:  
-  Permiten que un cambio de estilo ocurra de forma **gradual y animada** en lugar de instantánea.  
-  Por ejemplo, si un enlace cambia de color en `:hover`, podemos agregar  
-  `transition: color 0.3s;` al enlace, de modo que al hacer *hover* el color se desplace suavemente en 0.3 segundos en vez de cambiar abruptamente.  
-  En la guía, los botones y enlaces tienen transiciones en propiedades como background, color o transform para lograr efectos de *hover* más agradables.
+**Ejemplo concreto implementado**: Los enlaces del menú superior tienen `transition: background-color 0.3s;` y en `:hover` cambiamos su fondo (*background-color*) y texto. El resultado es un efecto suave al pasar el ratón. También en el botón de "volver arriba" (si existiese en el *footer*) podríamos animarlo con una pequeña transición o rotación al hacer *hover*.
 
-- **Animaciones con `@keyframes`**:  
-  Son más complejas; permiten definir una secuencia de estados (fotogramas clave) y crear animaciones más elaboradas que pueden ejecutarse independientemente del *hover* o no (por ejemplo, una animación continua al cargar la página).  
-  Se define un `@keyframes nombre` con pasos del 0% al 100% (o *from/to*) indicando cómo cambian ciertas propiedades,  
-  luego se aplica a un elemento con `animation: nombre 5s infinite;` (por ejemplo).  
-  Un uso podría ser hacer parpadear un texto, o mover un elemento.
+Con CSS3, incluso se pueden combinar **pseudo-clases con animaciones**: por ejemplo, usando `:focus` en un campo de formulario para hacer que un borde brille con una animación, etc. Las posibilidades son amplias y ayudan a mejorar la **interactividad sin escribir JavaScript**.
 
-  > En esta página, por simplicidad, no se incluyó ninguna animación compleja con *keyframes*, pero sí pequeñas transiciones y quizás un efecto de *hover* que escala ligeramente un elemento usando `transform: scale(1.05)` para hacerlo destacar al pasar el cursor.
-
----
-
-**Ejemplo concreto implementado**:  
-Los enlaces del menú superior tienen `transition: background-color 0.3s;`  
-y en `:hover` cambiamos su fondo (*background-color*) y texto.  
-El resultado es un efecto suave al pasar el ratón.  
-También en el botón de "volver arriba" (si existiese en el *footer*) podríamos animarlo con una pequeña transición o rotación al hacer *hover*.
-
----
-
-Con CSS3, incluso se pueden combinar **pseudo-clases con animaciones**:  
-por ejemplo, usando `:focus` en un campo de formulario para hacer que un borde brille con una animación, etc.  
-Las posibilidades son amplias y ayudan a mejorar la **interactividad sin escribir JavaScript**.
-
----
-
-En suma, las pseudo-clases permiten reaccionar a estados del DOM (enlace visitado, elemento *hover*, etc.)  
-y las animaciones/transiciones añaden vida al diseño.  
-Ambos recursos han sido aplicados modestamente en esta guía para enriquecer la experiencia:  
-ver el CSS para detalles, con comentarios explicativos junto a cada uso.
+En suma, las pseudo-clases permiten reaccionar a estados del DOM (enlace visitado, elemento *hover*, etc.) y las animaciones/transiciones añaden vida al diseño. Ambos recursos han sido aplicados modestamente en esta guía para enriquecer la experiencia: ver el CSS para detalles, con comentarios explicativos junto a cada uso.
 
 ## Uso de frameworks CSS (Bootstrap y Tailwind)
 
-En entornos profesionales es común apoyarse en frameworks o librerías CSS para acelerar el desarrollo y asegurar un diseño consistente.  
-Dos de los más populares hoy día son **Bootstrap** y **Tailwind CSS**.  
-Incluir conocimiento de ellos en esta guía es relevante porque en proyectos ASIR, DAW y DAM actuales, a menudo se espera que los desarrolladores estén familiarizados con al menos uno.
-
----
+En entornos profesionales es común apoyarse en frameworks o librerías CSS para acelerar el desarrollo y asegurar un diseño consistente. Dos de los más populares hoy día son **Bootstrap** y **Tailwind CSS**. Incluir conocimiento de ellos en esta guía es relevante porque en proyectos actuales de ASIR, DAW y DAM, a menudo se espera que los desarrolladores estén familiarizados con al menos uno.
 
 ### Bootstrap
 
-Bootstrap (actualmente en su versión 5) es el framework CSS más conocido.  
-Proporciona una extensa colección de componentes predefinidos (botones, barras de navegación, modales, carruseles, etc.)  
-y un poderoso sistema de **cuadrícula (grid)** responsiva.
+Bootstrap (actualmente en su versión 5) es el framework CSS más conocido. Proporciona una extensa colección de componentes predefinidos (botones, barras de navegación, modales, carruseles, etc.) y un poderoso sistema de **cuadrícula (grid)** responsiva. Basta incluir el archivo CSS de Bootstrap (por ejemplo, vía CDN) y añadir a nuestro HTML las clases adecuadas para obtener diseños modernos sin empezar desde cero. Por ejemplo, para crear un layout de dos columnas que se apilan en móvil, usaríamos una estructura con clases de la grid de Bootstrap:
 
-Basta incluir el archivo CSS de Bootstrap (por ejemplo, vía CDN)  
-y añadir a nuestro HTML las clases adecuadas para obtener diseños modernos sin empezar desde cero.
-
-> Por ejemplo, para crear un layout de dos columnas que se apilan en móvil, usaríamos una estructura con clases de la grid de Bootstrap:
-
-html
+```html
 <div class="container">
   <div class="row">
     <div class="col-md-6">Columna 1</div>
     <div class="col-md-6">Columna 2</div>
   </div>
 </div>
+```
 
-En nuestra página de guía, hemos integrado Bootstrap en una sección de ejemplo para mostrar su uso:  
-en la sección de **Ejercicios prácticos**, los desafíos están presentados como *cards* usando las clases de Bootstrap  
-(por ejemplo, `card`, `card-body`, `btn btn-primary`, etc.), demostrando cómo en pocas líneas obtenemos un estilo agradable.  
-(Mira el código fuente: verás el `<link>` a Bootstrap en el `<head>` y las clases en HTML).
-
----
+En nuestra página de guía, hemos integrado Bootstrap en una sección de ejemplo para mostrar su uso: en la sección de **Ejercicios prácticos**, los desafíos están presentados como *cards* usando las clases de Bootstrap (por ejemplo, `card`, `card-body`, `btn btn-primary`, etc.), demostrando cómo en pocas líneas obtenemos un estilo agradable (mira el código fuente: verás el `<link>` a Bootstrap en el `<head>` y las clases en HTML).
 
 ### Tailwind CSS
 
-Por otro lado, es un framework reciente que adopta un enfoque diferente, conocido como **utility-first**.  
-En lugar de componentes preestilizados, Tailwind proporciona **clases de utilidad de bajo nivel**  
-(por ejemplo, `bg-blue-500` para poner fondo azul, `text-center` para centrar texto, `p-4` para padding,  
-`grid-cols-3` para una grid de 3 columnas, etc.) que se combinan para construir diseños personalizados.
+Por otro lado, Tailwind CSS es un framework reciente que adopta un enfoque diferente, conocido como **utility-first**. En lugar de componentes preestilizados, Tailwind proporciona **clases de utilidad de bajo nivel** (por ejemplo, `bg-blue-500` para poner fondo azul, `text-center` para centrar texto, `p-4` para padding, `grid-cols-3` para una grid de 3 columnas, etc.) que se combinan para construir diseños personalizados. Es muy flexible: no impone un estilo predefinido sino que **acelera escribir CSS en línea en las clases HTML**. Por ejemplo, un botón se podría diseñar escribiendo: `<button class="px-4 py-2 bg-green-600 text-white rounded hover:bg-green-700">Enviar</button>` usando utilidades de Tailwind para padding horizontal y vertical, fondo verde, texto blanco, bordes redondeados y un hover más oscuro, todo sin escribir CSS en un archivo separado.
 
-Es muy flexible: no impone un estilo predefinido sino que **acelera escribir CSS en línea en las clases HTML**.
-
-Por ejemplo, un botón se podría diseñar escribiendo:
-
-``html
-<button class="px-4 py-2 bg-green-600 text-white rounded hover:bg-green-700">Enviar</button>
+Tailwind suele integrarse en proyectos mediante un proceso de build (PostCSS) que elimina las clases no usadas, por lo que puede mantenerse muy eficiente. Para propósitos de aprendizaje, también ofrecen un archivo CDN. En esta guía no se incluyó directamente Tailwind por cuestiones de scope, pero se comenta porque en el mercado laboral actual Tailwind está ganando mucha popularidad por su enfoque altamente personalizable. A diferencia de Bootstrap que brinda componentes listos, Tailwind te da control completo sobre la apariencia sin estar limitado por diseños prehechos​. La contrapartida es que puede resultar abrumador al inicio (tantas clases utilitarias) y el HTML se llena de clases, pero muchos desarrolladores valoran su eficiencia y consistencia.
 
 ### ¿Cuál usar?
 
 Depende del proyecto.  
-**Bootstrap** es genial para prototipos rápidos o cuando no se quiere pensar en diseño desde cero; trae un estilo uniforme "de fábrica".  
-**Tailwind** es ideal cuando se busca un diseño único pero se quiere evitar escribir todo el CSS manualmente;  
-actúa como una biblioteca de piezas de Lego para el diseño.
+- **Bootstrap** es genial para prototipos rápidos o cuando no se quiere pensar en diseño desde cero; trae un estilo uniforme "de fábrica".  
+- **Tailwind** es ideal cuando se busca un diseño único pero se quiere evitar escribir todo el CSS manualmente; actúa como una biblioteca de piezas de Lego para el diseño.
 
-No son excluyentes: **ambas son herramientas útiles**.  
-Incluso existen otros frameworks (Bulma, Foundation, Materialize, etc.),  
-pero Bootstrap sigue siendo un "clásico confiable"  
-y Tailwind el "nuevo competidor en escena" enfocado en utilidades.
+No son excluyentes: **ambas son herramientas útiles**. Incluso existen otros frameworks (Bulma, Foundation, Materialize, etc.), pero Bootstrap sigue siendo un "clásico confiable" y Tailwind el "nuevo competidor en escena" enfocado en utilidades.
 
----
+En la práctica profesional en **DAW/DAM**, es común que proyectos *front-end* usen frameworks: por ejemplo, en una aplicación web quizá el front se resuelva con **React + Tailwind**,  
+o con un template **Bootstrap**. Para un **administrador de sistemas (ASIR)**, saber integrar un template Bootstrap en una intranet o personalizarlo puede ser útil también. Por ello, esta guía motiva a los estudiantes a al menos **familiarizarse** con estos frameworks, además de dominar lo fundamental de CSS puro.
 
-En la práctica profesional en **DAW/DAM**, es común que proyectos *front-end* usen frameworks:  
-por ejemplo, en una aplicación web quizá el front se resuelva con **React + Tailwind**,  
-o con un template **Bootstrap**.
+> *En el código de esta página web, la sección de recursos adicionales incluye enlaces a las documentaciones oficiales de Bootstrap y Tailwind.*
 
-Para un **administrador de sistemas (ASIR)**, saber integrar un template Bootstrap en una intranet o personalizarlo puede ser útil también.  
-Por ello, esta guía motiva a los estudiantes a al menos **familiarizarse** con estos frameworks,  
-además de dominar lo fundamental de CSS puro.
+<br>
 
----
+# Integración de IA en el aprendizaje de HTML/CSS
 
-> *(En el código de esta página, la sección de recursos adicionales incluye enlaces a las documentaciones oficiales de Bootstrap y Tailwind para referencia).*
+En los últimos años, la Inteligencia Artificial (IA) se ha convertido en una aliada para el aprendizaje y la productividad en programación. Existen **herramientas de IA para código** que pueden ayudar a los desarrolladores a generar fragmentos, corregir errores e incluso aprender conceptos nuevos de forma interactiva. Incorporar la IA en el proceso de aprender HTML/CSS puede ser muy beneficioso:
 
-## Integración de IA en el aprendizaje de HTML/CSS
+- **Asistentes virtuales y chatbots**: Herramientas como **ChatGPT** (OpenAI) o asistentes integrados en editores de código pueden responder dudas de teoría (`¿Qué hace exactamente la propiedad flex-basis?`), explicar por qué un código no funciona o incluso generar código de ejemplo a partir de lenguaje natural. Por ejemplo, un estudiante podría pedir: _"Genérame el código HTML y CSS para una tarjeta con imagen a la izquierda y texto a la derecha"_ y el asistente produciría un boceto de código que luego el estudiante puede analizar y modificar. Esto **acelera la obtención de ejemplos prácticos**.
+- **Generadores de código**: Hay herramientas en línea donde describes un diseño y la IA produce el HTML/CSS. Si bien no sustituyen entender cómo hacerlo manualmente, pueden servir para estudiar cómo la IA resuelve ciertos problemas de maquetación. Por ejemplo, ver el código que genera una IA para un formulario puede enseñarnos diferentes formas de estructurarlo.
+- **Copilot en IDEs**: Extensiones como **GitHub Copilot** integran IA en editores como Visual Studio Code. Mientras escribes, sugieren automáticamente código. Podría autocompletar una estructura `<header>...</header>` completa con `nav` al detectar que quieres un layout típico, o sugerir reglas CSS. Esto en aprendizaje puede guiar al alumno sobre sintaxis y opciones disponibles, aunque hay que tener cuidado de no volverse dependiente y usarlo más como guía que como copy + paste.
+- **Depuración de código**: Una IA puede ayudar a depurar HTML/CSS. Si el estudiante describe: _"Tengo un div que no se centra verticalmente pese a usar align-items en flex"_, la IA puede señalar posibles causas (como no tener `height` definido, o no estar usando `flex` en el elemento padre correcto). Esta capacidad de consulta instantánea a veces supera estar buscando en Google por mucho tiempo.
+- **Explicación de conceptos**: Del lado teórico, se puede usar IA para que explique con otras palabras un concepto difícil. Por ejemplo: _"Explícame el modelo de caja como si tuviera 5 años"_ o _"¿Por qué los margin colapsan?"_
 
-En los últimos años, la Inteligencia Artificial se ha convertido en una aliada para el aprendizaje y la productividad en programación.  
-Existen **herramientas de IA para código** que pueden ayudar a los desarrolladores a generar fragmentos, corregir errores  
-e incluso aprender conceptos nuevos de forma interactiva.  
-Incorporar la IA en el proceso de aprender HTML/CSS puede ser muy beneficioso:
+Es importante mencionar que, si bien estas herramientas son impresionantes, **no reemplazan la comprensión**. Pueden acelerar la escritura de código, pero el desarrollador debe revisar y entender lo que hacen. Al aprender, conviene usar la IA para experimentar y obtener *feedback*, pero siempre acompañando con lectura de documentación oficial (por ejemplo MDN) y práctica manual.
 
-- **Asistentes virtuales y chatbots**:  
-  Herramientas como **ChatGPT** (OpenAI) o asistentes integrados en editores de código  
-  pueden responder dudas de teoría (`¿Qué hace exactamente la propiedad flex-basis?`),  
-  explicar por qué un código no funciona o incluso generar código de ejemplo a partir de lenguaje natural.  
-  Por ejemplo, un estudiante podría pedir:  
-  _"Genérame el código HTML y CSS para una tarjeta con imagen a la izquierda y texto a la derecha"_  
-  y el asistente produciría un boceto de código que luego el estudiante puede analizar y modificar.  
-  Esto **acelera la obtención de ejemplos prácticos**.
+En esta guía no se incluye una sección de IA como contenido visible para el usuario final, pero en esta documentación se resalta su uso para que los estudiantes **aprovechen estas herramientas en su proceso formativo**. Por ejemplo, un reto propuesto podría ser: _"Utiliza ChatGPT para generar un ejemplo de formulario con 3 campos y valida uno de ellos con HTML5; luego interpreta el código generado y adáptalo."_ De esta forma se integra la IA como **parte activa del aprendizaje**.
 
-- **Generadores de código**:  
-  Hay herramientas en línea donde describes un diseño y la IA produce el HTML/CSS.  
-  Si bien no sustituyen entender cómo hacerlo manualmente, pueden servir para estudiar cómo la IA resuelve ciertos problemas de maquetación.  
-  Por ejemplo, ver el código que genera una IA para un formulario puede enseñarnos diferentes formas de estructurarlo.
+En el ámbito profesional, la IA ya está ayudando a infinidad de desarrolladores a potenciar su trabajo sin afectar la calidad del código. **Aprender a colaborar con herramientas como ChatGPT o Copilot es una habilidad nueva** que sumada al dominio de HTML/CSS puede hacer a un desarrollador mucho más eficiente. En FP de informática, esto se traduce en estar actualizado con las metodologías modernas de desarrollo.
 
-- **Copilotos en IDEs**:  
-  Extensiones como **GitHub Copilot** integran IA en editores como VSCode.  
-  Mientras escribes, sugieren automáticamente código.  
-  Podría autocompletar una estructura `<header>...</header>` completa con `nav` al detectar que quieres un layout típico,  
-  o sugerir reglas CSS.  
-  Esto en aprendizaje puede guiar al alumno sobre sintaxis y opciones disponibles.  
-  (Hay que tener cuidado de no volverse dependiente y usarlo más como guía que como muleta).
+<br>
 
-- **Depuración de código**:  
-  Una IA puede ayudar a depurar HTML/CSS.  
-  Si el estudiante describe:  
-  _"Tengo un div que no se centra verticalmente pese a usar align-items en flex"_,  
-  la IA puede señalar posibles causas (como no tener `height` definido, o no estar usando `flex` en el elemento padre correcto).  
-  Esta capacidad de consulta instantánea a veces supera estar buscando en Google por mucho tiempo.
-
-- **Explicación de conceptos**:  
-  Del lado teórico, se puede usar IA para que explique con otras palabras un concepto difícil.  
-  Por ejemplo: _"Explícame el modelo de caja como si tuviera 5 años"_ o _"¿Por qué los margin colapsan?"_
-
----
-
-Es importante mencionar que, si bien estas herramientas son impresionantes,  
-**no reemplazan la comprensión**.  
-Pueden acelerar la escritura de código, pero el desarrollador debe revisar y entender lo que hacen.  
-Al aprender, conviene usar la IA para experimentar y obtener *feedback*,  
-pero siempre acompañando con lectura de documentación oficial (por ejemplo MDN) y práctica manual.
-
----
-
-En esta guía no se incluye una sección de IA como contenido visible para el usuario final,  
-pero en esta documentación se resalta su uso para que los estudiantes **aprovechen estas herramientas en su proceso formativo**.
-
-Por ejemplo, un reto propuesto podría ser:
-
-> _"Utiliza ChatGPT para generar un ejemplo de formulario con 3 campos y valida uno de ellos con HTML5; luego interpreta el código generado y adáptalo."_
-
-De esta forma se integra la IA como **parte activa del aprendizaje**.
-
----
-
-En el ámbito profesional, la IA ya está ayudando a infinidad de desarrolladores a potenciar su trabajo sin afectar la calidad del código.  
-**Aprender a colaborar con herramientas como ChatGPT o Copilot es una habilidad nueva**  
-que sumada al dominio de HTML/CSS puede hacer a un desarrollador mucho más eficiente.  
-
-En FP de informática (ASIR/DAW/DAM), esto se traduce en estar actualizado con las metodologías modernas de desarrollo.
-
-## Ejemplos profesionales de uso (ASIR, DAW, DAM)
+# Ejemplos profesionales de uso (ASIR, DAW, DAM)
 
 Para contextualizar la teoría en situaciones reales, veamos cómo los conocimientos de HTML y CSS se aplican en proyectos típicos de cada especialidad:
 
