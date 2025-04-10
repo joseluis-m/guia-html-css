@@ -1,10 +1,8 @@
-## Introducción
+# Introducción
 
 Esta guía es una **página web** que resume los fundamentos de HTML y CSS, orientados a los módulos de Formación Profesional de **Administración de Sistemas Informáticos en Red (ASIR)**, **Desarrollo de Aplicaciones Web (DAW)** y **Desarrollo de Aplicaciones Multiplataforma (DAM)**.
 
 El objetivo es proporcionar una referencia accesible y completa para estudiantes, con contenidos teóricos, buenas prácticas y ejemplos prácticos. La página está construida con una estructura semántica clara, un diseño moderno y limpio, y se puede navegar mediante enlaces internos. Cada sección incluye explicaciones detalladas y el código HTML está comentado para facilitar la comprensión. Finalmente, se aportan ejercicios, retos y recursos adicionales para profundizar en el aprendizaje.
-
----
 
 ## Estructura y accesibilidad de la página
 
@@ -16,13 +14,13 @@ En cuanto a **accesibilidad**, aparte de las etiquetas semánticas, se han segui
 
 Por último, la estructura bien definida no solo ayuda a accesibilidad, **SEO** y navegación, sino también al mantenimiento del código. Un HTML semántico y limpio es más fácil de entender y actualizar por otros desarrolladores en proyectos colaborativos. En resumen, esta página ejemplifica una organización lógica del contenido y aplica estándares web modernos para ser clara, accesible y fácil de ampliar.
 
----
+<br>
 
-## Fundamentos de HTML
+# Fundamentos de HTML
 
 En esta sección se cubren los contenidos esenciales de HTML, incluyendo las etiquetas básicas y la estructura de un documento, el uso de etiquetas semánticas, la creación de formularios con validación integrada, y nociones de SEO básico aplicadas al HTML.
 
-### Etiquetas básicas y estructura semántica
+## Etiquetas básicas y estructura semántica
 
 Un documento HTML comienza con la declaración de tipo `<!DOCTYPE html>` (para indicar al navegador que usamos HTML5), seguida de la etiqueta raíz `<html lang="es">` que engloba todo el contenido. Dentro de `<html>` diferenciamos dos partes: el **head** (`<head>`) y el **body** (`<body>`). En el `<head>` colocamos meta-información sobre la página, como el `<title>` (título que aparece en la pestaña del navegador y en resultados de búsqueda), la codificación de caracteres (`<meta charset="UTF-8">` para soportar caracteres especiales), la meta-descripción para SEO, enlaces a hojas de estilo CSS, etc. En el `<body>` va el contenido visible de la página estructurado con las etiquetas apropiadas.
 
