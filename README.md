@@ -264,6 +264,8 @@ o con un template **Bootstrap**. Para un **administrador de sistemas (ASIR)**, s
 
 # Integración de IA en el aprendizaje de HTML/CSS
 
+![Logos de ChatGPT, Gemini y Copilot](https://images.gizbot.com/webp/img/2024/12/chatgpt-vs-gemini-vs-copilot3-1733462365.jpeg "ChatGPT, Gemini, Copilot logos")
+
 En los últimos años, la Inteligencia Artificial (IA) se ha convertido en una aliada para el aprendizaje y la productividad en programación. Existen **herramientas de IA para código** que pueden ayudar a los desarrolladores a generar fragmentos, corregir errores e incluso aprender conceptos nuevos de forma interactiva. Incorporar la IA en el proceso de aprender HTML/CSS puede ser muy beneficioso:
 
 - **Asistentes virtuales y chatbots**: Herramientas como **ChatGPT** (OpenAI) o asistentes integrados en editores de código pueden responder dudas de teoría (`¿Qué hace exactamente la propiedad flex-basis?`), explicar por qué un código no funciona o incluso generar código de ejemplo a partir de lenguaje natural. Por ejemplo, un estudiante podría pedir: _"Genérame el código HTML y CSS para una tarjeta con imagen a la izquierda y texto a la derecha"_ y el asistente produciría un boceto de código que luego el estudiante puede analizar y modificar. Esto **acelera la obtención de ejemplos prácticos**.
