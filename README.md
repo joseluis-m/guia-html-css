@@ -4,6 +4,8 @@ Esta guía es una **página web** que resume los fundamentos de HTML y CSS, orie
 
 El objetivo es proporcionar una referencia accesible y completa para estudiantes, con contenidos teóricos, buenas prácticas y ejemplos prácticos. La página está construida con una estructura semántica clara, un diseño moderno y limpio, y se puede navegar mediante enlaces internos. Cada sección incluye explicaciones detalladas y el código HTML está comentado para facilitar la comprensión. Finalmente, se aportan ejercicios, retos y recursos adicionales para profundizar en el aprendizaje.
 
+**URL**: https://joseluis-m.github.io/guia-html-css/
+
 <br>
 
 # Estructura y accesibilidad de la página
