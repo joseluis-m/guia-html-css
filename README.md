@@ -4,7 +4,9 @@ Esta guía es una **página web** que resume los fundamentos de HTML y CSS, orie
 
 El objetivo es proporcionar una referencia accesible y completa para estudiantes, con contenidos teóricos, buenas prácticas y ejemplos prácticos. La página está construida con una estructura semántica clara, un diseño moderno y limpio, y se puede navegar mediante enlaces internos. Cada sección incluye explicaciones detalladas y el código HTML está comentado para facilitar la comprensión. Finalmente, se aportan ejercicios, retos y recursos adicionales para profundizar en el aprendizaje.
 
-## Estructura y accesibilidad de la página
+<br>
+
+# Estructura y accesibilidad de la página
 
 Una página web bien estructurada en HTML utiliza **etiquetas semánticas** para darle significado al contenido. Esto mejora la accesibilidad y la usabilidad, pues tanto los navegadores como las tecnologías de asistencia (lectores de pantalla) pueden interpretar mejor la página. Por ejemplo, en lugar de usar contenedores genéricos `<div>` para todo, conviene emplear etiquetas como `<header>`, `<nav>`, `<main>`, `<section>`, `<article>`, `<aside>` y `<footer>` para delimitar las distintas partes de la página. Estas etiquetas describen el tipo de contenido que envuelven, dando contexto a usuarios y motores de búsqueda. Un lector de pantalla, por ejemplo, puede saltar directamente al `<nav>` para navegar por el sitio o ignorar un `<aside>` si se indica contenido complementario, mejorando la **experiencia de accesibilidad** para usuarios con discapacidad visual.
 
@@ -24,13 +26,11 @@ En esta sección se cubren los contenidos esenciales de HTML, incluyendo las eti
 
 Un documento HTML comienza con la declaración de tipo `<!DOCTYPE html>` (para indicar al navegador que usamos HTML5), seguida de la etiqueta raíz `<html lang="es">` que engloba todo el contenido. Dentro de `<html>` diferenciamos dos partes: el **head** (`<head>`) y el **body** (`<body>`). En el `<head>` colocamos meta-información sobre la página, como el `<title>` (título que aparece en la pestaña del navegador y en resultados de búsqueda), la codificación de caracteres (`<meta charset="UTF-8">` para soportar caracteres especiales), la meta-descripción para SEO, enlaces a hojas de estilo CSS, etc. En el `<body>` va el contenido visible de la página estructurado con las etiquetas apropiadas.
 
-Las **etiquetas HTML básicas de contenido** incluyen los encabezados `<h1>` a `<h6>` (siendo `<h1>` el título principal y los demás subtítulos por orden de jerarquía), párrafos `<p>` para texto, enlaces `<a>` para hipervínculos, imágenes `<img>` (siempre con atributo `alt` para texto alternativo), listas `<ul>` (no ordenadas, con viñetas) y `<ol>` (ordenadas, numéricas) junto con `<li>` para cada elemento de lista, y otras como `<strong>` o `<em>` para dar énfasis a texto en **negrita** o *cursiva*.
+Las **etiquetas HTML básicas de contenido** incluyen los encabezados `<h1>` a `<h6>` (siendo `<h1>` el título principal y los demás subtítulos por orden de jerarquía), párrafos `<p>` para texto, enlaces `<a>` para hipervínculos, imágenes `<img>` (siempre con atributo `alt` para texto alternativo), listas `<ul>` (no ordenadas, con viñetas) y `<ol>` (ordenadas, numéricas) junto con `<li>` para cada elemento de lista, y otras como `<strong>` o `<em>` para dar énfasis a texto en **negrita** o *cursiva*. Además, se pueden emplear etiquetas para estructurar datos y contenido complementario: para presentar información en formato tabular se utilizan `<table>`, `<thead>`, `<tbody>`, `<tfoot>`, `<tr>`, `<th>` y `<td>`; para mostrar ejemplos de código se recomienda el uso conjunto de `<pre>` y `<code>`; y para agrupar imágenes con una leyenda se emplean `<figure>` y `<figcaption>`.
 
 A medida que creamos la estructura del contenido, es importante usar **HTML semántico**. Por ejemplo, en vez de muchos `<div>` anidados sin significado, se usan contenedores semánticos: `<header>` para el encabezado de la página o de una sección, `<nav>` para agrupación de enlaces de navegación, `<main>` para envolver el contenido principal del documento, `<section>` para secciones temáticas dentro del `<main>`, `<article>` para contenido que podría ser independiente (una publicación, noticia o artículo), `<aside>` para contenidos relacionados pero secundarios (como barras laterales, citas, información adicional) y `<footer>` para el pie de página.
 
 Este enfoque semántico mejora la comprensión del documento por parte de los buscadores y ayuda al **SEO**: los motores de búsqueda utilizan estas etiquetas para entender mejor la estructura y contenido, lo que influye en la clasificación en resultados. Además, contribuye a la **accesibilidad**, facilitando la navegación por secciones usando ayudas técnicas. En el código de la página de esta guía, cada sección está marcada con sus etiquetas correspondientes y comentarios que indican su propósito (por ejemplo, `<!-- SECCIÓN: Fundamentos de HTML -->` antes del bloque de contenido de HTML).
-
----
 
 ## Formularios y validación en HTML5
 
@@ -41,8 +41,6 @@ HTML5 introdujo una serie de **atributos de validación** incorporados que permi
 Un ejemplo sencillo incluido en esta página es un pequeño formulario de contacto donde se utiliza `required` para campos obligatorios y `type="email"` para validar automáticamente que el correo tenga un formato válido. Gracias a HTML5, al intentar enviar el formulario, el navegador verificará estos requisitos y avisará al usuario si olvidó llenar algo o si el formato es incorrecto, mostrando mensajes como "Este campo es obligatorio" o "Introduzca una dirección de correo electrónico válida". **Es importante destacar** que la validación del lado del cliente (con HTML5 o incluso con JavaScript) no sustituye la validación del lado del servidor; siempre se debe verificar en el servidor los datos recibidos, por seguridad. Aun así, estas validaciones en HTML mejoran la experiencia de usuario al dar una retroalimentación inmediata.
 
 En el código, hemos comentado cada parte del formulario para explicar su rol (por ejemplo, `<!-- Campo de email con validación HTML5 -->`). También se ilustra el uso del atributo `placeholder` para mostrar texto de ayuda dentro de los campos antes de que el usuario escriba, y cómo agrupar controles relacionados con `<fieldset>` y `<legend>` (por ejemplo, para un grupo de botones de opción).
-
----
 
 ## SEO básico en HTML
 
@@ -64,13 +62,13 @@ Aunque el posicionamiento en buscadores (SEO) es un tema extenso que involucra m
 
 En resumen, siguiendo estas prácticas HTML básicas (estructura semántica, títulos y metadatos adecuados, alt en imágenes, etc.), sentamos una buena base para que la página sea indexada correctamente por los motores de búsqueda y sea accesible para los usuarios. Los contenidos de esta guía están organizados pensando en ello, de modo que resulten claros tanto para usuarios como para buscadores.
 
----
+<br>
 
-## Fundamentos de CSS
+# Fundamentos de CSS
 
 A continuación, se abordan los temas fundamentales de CSS necesarios para dar estilo y diseño a las páginas HTML: cómo seleccionar elementos para aplicar estilos, en qué consiste el modelo de caja y cómo manejar espacios/márgenes, cómo lograr un diseño adaptable a distintos dispositivos con media queries, y sistemas de diseño modernos con Flexbox y Grid, además de pseudo-clases y animaciones para interactividad.
 
-### Selectores CSS
+## Selectores CSS
 
 Los **selectores** nos permiten indicar a qué elementos HTML se aplican ciertas reglas CSS. CSS ofrece multitud de tipos de selectores, pero los más usados incluyen:
 
@@ -94,8 +92,6 @@ Al escribir CSS, hay que considerar la **especificidad** de los selectores: por 
 
 En la hoja de estilo de esta guía, verás ejemplos de todos estos tipos de selectores. Por ejemplo, usamos selectores de elemento para estilo general de tipografía (`body`, `h1`, `h2`, etc.), selectores de clase para componentes específicos (como `.codigo` para formatear bloques de código de ejemplo), y selectores anidados (combinadores) para casos como `.navbar a` (enlaces dentro de la barra de navegación).  
 Los comentarios en el CSS explican la intención de cada bloque de estilos.
-
----
 
 ## El modelo de caja (CSS Box Model)
 
@@ -123,8 +119,6 @@ Además, el **margin** tiene la particularidad de colapsar verticalmente en algu
 En la hoja CSS de esta guía, hemos definido algunos estilos relacionados con el modelo de caja: un reset para establecer `box-sizing: border-box` globalmente (así manejar anchos es más intuitivo), márgenes por defecto para títulos y párrafos, y padding interno en ciertos contenedores para separar el contenido de sus bordes. Cada sección del contenido quizás tenga un `padding: 2rem` alrededor, por ejemplo, para que el texto no pegue con el borde de la ventana. Los comentarios en el CSS señalan estas decisiones.
 
 En resumen, dominar el modelo de caja permite controlar correctamente **espaciados y tamaños** en CSS. Es un concepto fundamental: **contenido + padding + border + margin = espacio total ocupado por el elemento**. Si esto se entiende bien, resolver problemas de diseño como "¿por qué mi elemento se desborda?" o "¿cómo centro esta caja?" se vuelve más sencillo.
-
----
 
 ## Diseño responsivo con *media queries*
 
@@ -206,40 +200,22 @@ Flexbox se recomienda para diseños lineales (una barra, un componente, una fila
 En esta página de guía hemos documentado en los comentarios del CSS cómo se configuran estos sistemas. Cabe destacar que tanto Flexbox como Grid son ampliamente soportados por navegadores modernos. Aportan mucho al trabajo cotidiano, reduciendo la necesidad de hacks. Su uso práctico se ve en el código, por ejemplo:
 
 - `.nav-links { display: flex; justify-content: space-around; }` para distribuir equitativamente los enlaces de navegación.
-
 - `.ejemplos { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 1rem; }` para colocar tres bloques (ASIR, DAW, DAM) en un grid con espacio (*gap*) entre ellos.
 
 ## Pseudo-clases y animaciones CSS
 
-Las **pseudo-clases** en CSS permiten aplicar estilos a elementos **según su estado** o según ciertas condiciones, sin necesidad de clases extra ni JavaScript.  
-Se escriben con dos puntos `:` antes del nombre.
+Las **pseudo-clases** en CSS permiten aplicar estilos a elementos **según su estado** o según ciertas condiciones, sin necesidad de clases extra ni JavaScript. Se escriben con dos puntos `:` antes del nombre.
 
 Algunas de las más comunes:
 
-- `:hover`: se activa cuando el cursor del usuario está **encima** de un elemento (por ejemplo, sobre un enlace o botón).  
-  Suele utilizarse para efectos visuales como cambiar el color de un botón al pasar el ratón.  
-  En esta página, los enlaces de la barra de navegación cambian de apariencia al *hover* para indicar interactividad.
-
+- `:hover`: se activa cuando el cursor del usuario está **encima** de un elemento (por ejemplo, sobre un enlace o botón). Suele utilizarse para efectos visuales como cambiar el color de un botón al pasar el ratón. En esta página, los enlaces de la barra de navegación cambian de apariencia con *hover* para indicar interactividad.
 - `:active`: estado **activo** de algunos elementos, por ejemplo, un enlace o botón en el momento de ser pulsado (click sostenido).
+- `:focus`: cuando un elemento (generalmente enlace o campo de formulario) tiene el foco, es decir, está seleccionado para recibir entrada (por ejemplo, un input en el que hemos hecho click o navegado con TAB). Es importante estilizar el *focus* (como con `outline`) para accesibilidad, de modo que quienes navegan con teclado sepan dónde están. Esta guía mantiene los *outlines* por defecto en elementos con focus para no restar accesibilidad.
+- `:visited`: se aplica a enlaces `<a>` que el usuario ya ha visitado antes (historial del navegador). Por temas de privacidad, solo se puede cambiar propiedades limitadas (color normalmente) para indicar enlaces ya vistos.
+- `:first-child`, `:last-child`, `:nth-child(n)`: permiten seleccionar un elemento según su posición entre sus hermanos. Por ejemplo, `.lista li:first-child { ... }` estilizaría solo el primer `<li>` de una lista con clase "lista". En esta página podríamos usar `section:nth-child(even)` para dar un fondo gris claro a cada sección par, por ejemplo, alternando colores de fondo para mejorar la separación visual.
+- `:disabled`, `:checked`, etc.: se aplican en controles de formulario; por ejemplo `input:disabled` para campos deshabilitados, `input:checked` para checkboxes o radios marcados.
 
-- `:focus`: cuando un elemento (generalmente enlace o campo de formulario) tiene el foco, es decir, está seleccionado para recibir entrada (por ejemplo, un input en el que hemos hecho click o navegado con TAB).  
-  Es importante estilizar el *focus* (como con `outline`) para accesibilidad, de modo que quienes navegan con teclado sepan dónde están.  
-  Esta guía mantiene los *outlines* por defecto en elementos focuseados para no restar accesibilidad.
-
-- `:visited`: se aplica a enlaces `<a>` que el usuario ya ha visitado antes (historial del navegador).  
-  Por temas de privacidad, solo se puede cambiar propiedades limitadas (color normalmente) para indicar enlaces ya vistos.
-
-- `:first-child`, `:last-child`, `:nth-child(n)`: permiten seleccionar un elemento según su posición entre sus hermanos.  
-  Por ejemplo, `.lista li:first-child { ... }` estilizaría solo el primer `<li>` de una lista con clase "lista".  
-  En esta página podríamos usar `section:nth-child(even)` para dar un fondo gris claro a cada sección par, por ejemplo, alternando colores de fondo para mejorar la separación visual.
-
-- `:disabled`, `:checked`, etc.: se aplican en controles de formulario;  
-  por ejemplo `input:disabled` para campos deshabilitados, `input:checked` para checkboxes o radios marcados.
-
----
-
-Las pseudo-clases hacen muy poderoso el CSS para interactuar con la acción del usuario.  
-Por ejemplo, un simple *hover* en CSS puede sustituir la necesidad de un script para resaltar botones.
+Las pseudo-clases hacen muy poderoso el CSS para interactuar con la acción del usuario. Por ejemplo, un simple *hover* en CSS puede sustituir la necesidad de un script para resaltar botones.
 
 ---
 
